@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddanmgaltueiq"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_8e7y8"]
+[ext_resource type="Texture2D" uid="uid://c7jdim0ct1cid" path="res://assets/player.png" id="2_8ka1b"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8ojcx"]
+radius = 3.0
+height = 8.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_8e7y8")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_8ka1b")
+
+[node name="CollisionPolygon" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(7, 9, 7, 5, 4, 2, 4, -4, 0, -9, -4, -4, -4, 2, -7, 5, -7, 9, -2, 5, 2, 5)
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CapsuleShape2D_8ojcx")
+debug_color = Color(0.7, 0, 0, 0.419608)
