@@ -7,6 +7,9 @@ class_name Player extends CharacterBody2D
 
 @onready var thrust_particles: GPUParticles2D = $ThrustParticles
 
+func _enter_tree() -> void:
+	RoomManager.current_room.player = self
+
 func _physics_process(delta: float) -> void:
 	var x_input := Input.get_axis("left", "right")
 	rotation_degrees += x_input * turn_speed * delta

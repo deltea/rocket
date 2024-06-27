@@ -1,12 +1,12 @@
 [gd_scene load_steps=13 format=3 uid="uid://d0l1lmio1gtoc"]
 
 [ext_resource type="Script" path="res://rooms/level.gd" id="1_0teix"]
-[ext_resource type="Resource" uid="uid://gb5trpxw2qxw" path="res://color-palettes/bacon.tres" id="2_2vnq7"]
+[ext_resource type="Resource" uid="uid://qinrdwbrmyrt" path="res://color-palettes/forest.tres" id="2_3n8qy"]
 [ext_resource type="PackedScene" uid="uid://ddanmgaltueiq" path="res://scenes/player/player.tscn" id="2_lf1yj"]
 [ext_resource type="Texture2D" uid="uid://cddt23y0y51g6" path="res://assets/foreground-tileset.png" id="3_q0y3n"]
-[ext_resource type="Texture2D" uid="uid://driwdcg5fhuee" path="res://assets/background.png" id="4_2x2sn"]
 [ext_resource type="Texture2D" uid="uid://cc6dfl0mgyip0" path="res://assets/background-tileset.png" id="4_bnur7"]
 [ext_resource type="PackedScene" uid="uid://bjplmnq45exjl" path="res://scenes/camera/camera.tscn" id="5_m77t8"]
+[ext_resource type="Texture2D" uid="uid://cdnunui18bx10" path="res://assets/generic/pixel.png" id="7_nc00j"]
 [ext_resource type="PackedScene" uid="uid://dhjgvw4r652uj" path="res://scenes/key/key.tscn" id="8_j2g7f"]
 [ext_resource type="PackedScene" uid="uid://cf30e6g3uvil2" path="res://scenes/portal/portal.tscn" id="8_lfqqa"]
 
@@ -216,9 +216,15 @@ sources/2 = SubResource("TileSetAtlasSource_rjll7")
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_0teix")
-palette = ExtResource("2_2vnq7")
+palette = ExtResource("2_3n8qy")
+metadata/_edit_horizontal_guides_ = [-128.0, 128.0]
+metadata/_edit_vertical_guides_ = [-160.0, 160.0]
 
 [node name="Player" parent="." instance=ExtResource("2_lf1yj")]
+
+[node name="Camera" parent="." instance=ExtResource("5_m77t8")]
+ignore_rotation = false
+position_smoothing_speed = 2.0
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ql7jh")
@@ -231,10 +237,10 @@ layer_1/z_index = -10
 layer_1/tile_data = PackedInt32Array(-196610, 458754, 0, -262144, 458754, 0, -262143, 458754, 0, -196607, 458754, 0, -196606, 2, 3, -262142, 458754, 0, -262141, 458754, 0, -327677, 458754, 2, -327676, 458754, 0, -327683, 458754, 0, -327682, 458754, 0, -262146, 458754, 0, -262145, 458754, 2, -196609, 458754, 0, -327679, 458754, 0, -327678, 458754, 0, -393214, 458754, 0, -393213, 458754, 0, -393215, 458754, 1, -131074, 65538, 3, -327675, 458754, 0, -196605, 65538, 3, -262140, 327682, 1, -327680, 458754, 0, -65533, 458754, 3, -131071, 65538, 3, -196608, 65538, 3, -262148, 262146, 1, -262147, 458754, 0, -196611, 2, 3, -327684, 458754, 0, -393212, 458754, 0, -327685, 458754, 0, -65544, 196610, 1, -131079, 196610, 1, -131080, 458754, 0, -196615, 458754, 0, -65543, 327682, 1, -262150, 458754, 0, 131064, 65538, 1, 65528, 65538, 0, -8, 327682, 3, -262149, 65538, 3, -196614, 196610, 3, -262139, 131074, 3, -262138, 458754, 0, -196602, 131074, 1, -131065, 458754, 0, -65529, 131074, 3, 7, 2, 0, 65543, 131074, 0, 131079, 458754, 0, 131078, 131074, 0, 196614, 458754, 0, 196613, 65538, 2, 262148, 131074, 2, 327683, 131074, 2, 327684, 458754, 0, 262149, 458754, 0, 65542, 262146, 0, -196601, 458754, 0, -131066, 262146, 3, 327675, 196610, 2, 196601, 196610, 2, 262137, 458754, 0, 196600, 458754, 0, 262138, 196610, 0, 327674, 458754, 0, 393211, 458754, 0, 393212, 327682, 2, 0, 262146, 0, 1, 327682, 0, 65533, 262146, 2, 65534, 327682, 2, 196607, 2, 1)
 
 [node name="Background" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 1, 1)
 z_index = -20
-texture = ExtResource("4_2x2sn")
-
-[node name="Camera" parent="." instance=ExtResource("5_m77t8")]
+scale = Vector2(320, 240)
+texture = ExtResource("7_nc00j")
 
 [node name="Portal" parent="." instance=ExtResource("8_lfqqa")]
 position = Vector2(0, -41)
