@@ -5,4 +5,3 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	position = get_global_mouse_position()
-	rotation = RoomManager.current_room.player.rotation
