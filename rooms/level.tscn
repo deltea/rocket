@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://driwdcg5fhuee" path="res://assets/background.png" id="4_2x2sn"]
 [ext_resource type="Texture2D" uid="uid://cc6dfl0mgyip0" path="res://assets/background-tileset.png" id="4_bnur7"]
 [ext_resource type="PackedScene" uid="uid://bjplmnq45exjl" path="res://scenes/camera/camera.tscn" id="5_m77t8"]
-[ext_resource type="Texture2D" uid="uid://t80dgkja51kq" path="res://assets/key.png" id="7_yn1ff"]
+[ext_resource type="PackedScene" uid="uid://dhjgvw4r652uj" path="res://scenes/key/key.tscn" id="8_j2g7f"]
 [ext_resource type="PackedScene" uid="uid://cf30e6g3uvil2" path="res://scenes/portal/portal.tscn" id="8_lfqqa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ep4x4"]
@@ -234,9 +234,8 @@ texture = ExtResource("4_2x2sn")
 
 [node name="Camera" parent="." instance=ExtResource("5_m77t8")]
 
-[node name="Key" type="Sprite2D" parent="."]
-position = Vector2(-65, -38)
-texture = ExtResource("7_yn1ff")
-
 [node name="Portal" parent="." instance=ExtResource("8_lfqqa")]
 position = Vector2(0, -41)
+
+[node name="Key" parent="." instance=ExtResource("8_j2g7f")]
+position = Vector2(-53, -39)
