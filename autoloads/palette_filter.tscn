@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dl32rq6akrwr1"]
+
+[ext_resource type="Script" path="res://autoloads/palette_filter.gd" id="1_adh26"]
+[ext_resource type="Shader" path="res://shaders/palette_filter.gdshader" id="2_2kqrj"]
+[ext_resource type="Resource" uid="uid://ceq60es763md2" path="res://color-palettes/ocean.tres" id="2_trvfq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_05rop"]
+shader = ExtResource("2_2kqrj")
+shader_parameter/old_primary = Color(1, 1, 1, 1)
+shader_parameter/old_accent = Color(1, 0, 0, 1)
+shader_parameter/old_background = Color(0, 0, 1, 1)
+shader_parameter/old_midground = Color(0, 1, 0, 1)
+shader_parameter/old_foreground = Color(0, 0, 0, 1)
+shader_parameter/new_primary = Color(1, 1, 1, 1)
+shader_parameter/new_accent = Color(1, 0, 0, 1)
+shader_parameter/new_background = Color(0, 0, 1, 1)
+shader_parameter/new_midground = Color(0, 1, 0, 1)
+shader_parameter/new_foreground = Color(0, 0, 0, 1)
+
+[node name="PaletteFilter" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_adh26")
+default_palette = ExtResource("2_trvfq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_05rop")
+offset_right = 320.0
+offset_bottom = 240.0
