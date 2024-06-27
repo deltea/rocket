@@ -41,7 +41,7 @@ polygon = PackedVector2Array(7, 9, 7, 5, 4, 2, 4, -4, 0, -9, -4, -4, -4, 2, -7, 
 [node name="ThrustParticles" type="GPUParticles2D" parent="."]
 z_index = -1
 position = Vector2(0, 5)
-amount = 10
+amount = 12
 process_material = SubResource("ParticleProcessMaterial_vlwwk")
 texture = ExtResource("3_o3pd5")
 lifetime = 0.5

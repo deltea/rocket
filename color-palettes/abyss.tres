@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Palette" load_steps=2 format=3 uid="uid://dw6k5s7p2e1ga"]
+
+[ext_resource type="Script" path="res://scripts/PaletteResource.gd" id="1_oltvq"]
+
+[resource]
+script = ExtResource("1_oltvq")
+primary = Color(0.85098, 0.364706, 0.270588, 1)
+accent = Color(0.694118, 0.184314, 0.227451, 1)
+background = Color(0.478431, 0.121569, 0.227451, 1)
+midground = Color(0.321569, 0.0980392, 0.207843, 1)
+foreground = Color(0, 0, 0, 1)

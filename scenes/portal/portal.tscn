@@ -30,6 +30,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 0.8
 scale_max = 0.8
 scale_curve = SubResource("CurveTexture_s5hnc")
+color = Color(1, 0, 0, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hp6p1"]
 radius = 12.0

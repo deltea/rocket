@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://autoloads/palette_filter.gd" id="1_adh26"]
 [ext_resource type="Shader" path="res://shaders/palette_filter.gdshader" id="2_2kqrj"]
-[ext_resource type="Resource" uid="uid://ceq60es763md2" path="res://color-palettes/ocean.tres" id="2_trvfq"]
+[ext_resource type="Resource" uid="uid://u7k86llint5o" path="res://color-palettes/sunset.tres" id="2_exoxu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_05rop"]
 shader = ExtResource("2_2kqrj")
@@ -20,7 +20,7 @@ shader_parameter/new_foreground = Color(0, 0, 0, 1)
 [node name="PaletteFilter" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_adh26")
-default_palette = ExtResource("2_trvfq")
+default_palette = ExtResource("2_exoxu")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_05rop")

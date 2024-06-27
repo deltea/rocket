@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_na5uk")
-primary = Color(1, 1, 1, 1)
+primary = Color(0.8, 0.854902, 1, 1)
 accent = Color(0.196078, 0.305882, 0.6, 1)
 background = Color(0.113725, 0.172549, 0.341176, 1)
 midground = Color(0.0745098, 0.113725, 0.219608, 1)
