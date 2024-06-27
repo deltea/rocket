@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1betdwyodmp2"]
+
+[ext_resource type="PackedScene" uid="uid://4he04y548wrt" path="res://scenes/rocket-pieces/rocket_piece.tscn" id="1_juaae"]
+
+[node name="RocketPieces" type="Node2D"]
+
+[node name="RocketPiece" parent="." instance=ExtResource("1_juaae")]
+position = Vector2(1, -4)
+
+[node name="Sprite" parent="RocketPiece" index="0"]
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 3, 7)
+
+[node name="CollisionPolygon" parent="RocketPiece" index="1"]
+polygon = PackedVector2Array(0, 0, 3, 0, 3, 6, 1, 7)
+
+[node name="RocketPiece2" parent="." instance=ExtResource("1_juaae")]
+position = Vector2(-4, -9)
+
+[node name="Sprite" parent="RocketPiece2" index="0"]
+centered = false
+region_enabled = true
+region_rect = Rect2(8, 0, 7, 8)
+
+[node name="CollisionPolygon" parent="RocketPiece2" index="1"]
+polygon = PackedVector2Array(0, 5, 3, 0, 5, 0, 7, 5, 3, 5, 0, 8)
+
+[node name="RocketPiece3" parent="." instance=ExtResource("1_juaae")]
+position = Vector2(-4, -1)
+
+[node name="Sprite" parent="RocketPiece3" index="0"]
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 7, 6)
+
+[node name="CollisionPolygon" parent="RocketPiece3" index="1"]
+polygon = PackedVector2Array(0, 0, 3, 0, 6, 1, 7, 5, 3, 5, 0, 3)
+
+[node name="RocketPiece4" parent="." instance=ExtResource("1_juaae")]
+position = Vector2(2, 2)
+
+[node name="Sprite" parent="RocketPiece4" index="0"]
+centered = false
+region_enabled = true
+region_rect = Rect2(24, 0, 5, 7)
+
+[node name="CollisionPolygon" parent="RocketPiece4" index="1"]
+polygon = PackedVector2Array(1, 0, 3, 0, 5, 3, 5, 7, 3, 7, 0, 4)
+
+[node name="RocketPiece5" parent="." instance=ExtResource("1_juaae")]
+position = Vector2(-7, 2)
+
+[node name="Sprite" parent="RocketPiece5" index="0"]
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 8, 7)
+
+[node name="CollisionPolygon" parent="RocketPiece5" index="1"]
+polygon = PackedVector2Array(0, 3, 2, 0, 8, 2, 5, 3, 2, 7, 0, 7)
+
+[editable path="RocketPiece"]
+[editable path="RocketPiece2"]
+[editable path="RocketPiece3"]
+[editable path="RocketPiece4"]
+[editable path="RocketPiece5"]

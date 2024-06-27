@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://4he04y548wrt"]
+
+[ext_resource type="Texture2D" uid="uid://ce8q1n0j8j4pg" path="res://assets/rocket-pieces.png" id="1_jlpur"]
+
+[node name="RocketPiece" type="RigidBody2D"]
+collision_layer = 0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("1_jlpur")
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon" type="CollisionPolygon2D" parent="."]
+metadata/_edit_lock_ = true

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0l1lmio1gtoc"]
+[gd_scene load_steps=8 format=3 uid="uid://d0l1lmio1gtoc"]
 
 [ext_resource type="Script" path="res://rooms/level.gd" id="1_0teix"]
 [ext_resource type="PackedScene" uid="uid://ddanmgaltueiq" path="res://scenes/player/player.tscn" id="2_lf1yj"]
 [ext_resource type="PackedScene" uid="uid://q354egvkd6xb" path="res://scenes/tilemap/tile_map.tscn" id="4_v8ubc"]
 [ext_resource type="PackedScene" uid="uid://bjplmnq45exjl" path="res://scenes/camera/camera.tscn" id="5_m77t8"]
+[ext_resource type="PackedScene" uid="uid://osoqlhrnqa8" path="res://scenes/pad/pad.tscn" id="7_8m54a"]
 [ext_resource type="Texture2D" uid="uid://cdnunui18bx10" path="res://assets/generic/pixel.png" id="7_nc00j"]
 [ext_resource type="PackedScene" uid="uid://cf30e6g3uvil2" path="res://scenes/portal/portal.tscn" id="8_lfqqa"]
 
@@ -29,3 +30,6 @@ texture = ExtResource("7_nc00j")
 
 [node name="Portal" parent="." instance=ExtResource("8_lfqqa")]
 position = Vector2(0, -41)
+
+[node name="Pad" parent="." instance=ExtResource("7_8m54a")]
+position = Vector2(0, 31)

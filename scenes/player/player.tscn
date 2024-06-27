@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_8e7y8"]
 [ext_resource type="Texture2D" uid="uid://c7jdim0ct1cid" path="res://assets/player.png" id="2_8ka1b"]
+[ext_resource type="PackedScene" uid="uid://d1betdwyodmp2" path="res://scenes/rocket-pieces/rocket_pieces.tscn" id="2_uvvah"]
 [ext_resource type="Texture2D" uid="uid://bxtc5illu43wy" path="res://assets/generic/circle-big.png" id="3_o3pd5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5op7l"]
+friction = 0.8
 
 [sub_resource type="Curve" id="Curve_6uffu"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.757752, 0.490352), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -25,16 +27,15 @@ scale_max = 0.4
 scale_curve = SubResource("CurveTexture_3dbl4")
 color = Color(1, 0, 0, 1)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8ojcx"]
-radius = 3.0
-height = 8.0
-
 [node name="Player" type="RigidBody2D"]
 z_index = 1
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_5op7l")
+max_contacts_reported = 1
+contact_monitor = true
 angular_damp = 10.0
 script = ExtResource("1_8e7y8")
+rocket_pieces_scene = ExtResource("2_uvvah")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_8ka1b")
@@ -52,9 +53,4 @@ lifetime = 0.5
 fixed_fps = 0
 draw_order = 0
 
-[node name="Hitbox" type="Area2D" parent="."]
-collision_layer = 2
-
-[node name="CollisionShape" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("CapsuleShape2D_8ojcx")
-debug_color = Color(0.7, 0, 0, 0.419608)
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

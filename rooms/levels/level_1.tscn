@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://d0l1lmio1gtoc" path="res://rooms/level.tscn" id="1_1w6ee"]
 [ext_resource type="PackedScene" uid="uid://dmidwgphesmiq" path="res://scenes/spikeball/spikeball.tscn" id="2_el4k4"]
-[ext_resource type="Resource" uid="uid://parskrghoxk5" path="res://color-palettes/cave.tres" id="2_p0i0s"]
+[ext_resource type="Resource" uid="uid://2ywcrxahp58f" path="res://color-palettes/crimson.tres" id="2_m77y8"]
 
 [node name="Level1" instance=ExtResource("1_1w6ee")]
-palette = ExtResource("2_p0i0s")
+palette = ExtResource("2_m77y8")
 
 [node name="Player" parent="." index="0"]
 position = Vector2(0, -22)
@@ -16,7 +16,13 @@ layer_0/tile_data = PackedInt32Array(196605, 458753, 0, 196606, 458753, 0, 19660
 layer_1/tile_data = PackedInt32Array(-131080, 458754, 0, -65544, 196610, 1, -8, 327682, 3, 65528, 65538, 0, 131064, 65538, 1, 196600, 458754, 0, -196615, 458754, 0, -131079, 196610, 1, -65543, 327682, 1, 196601, 196610, 2, 262137, 458754, 0, -262150, 458754, 0, -196614, 196610, 3, 262138, 196610, 0, 327674, 458754, 0, -327685, 458754, 0, -262149, 65538, 3, 327675, 196610, 2, 393211, 458754, 0, -327684, 458754, 0, -262148, 262146, 1, 393212, 327682, 2, -327683, 458754, 0, -262147, 458754, 0, -196611, 2, 3, 65533, 262146, 2, -327682, 458754, 0, -262146, 458754, 0, -196610, 458754, 0, -131074, 65538, 3, 65534, 327682, 2, -262145, 458754, 2, -196609, 458754, 0, 196607, 2, 1, -327680, 458754, 0, -262144, 458754, 0, -196608, 65538, 3, 0, 262146, 0, -393215, 458754, 1, -327679, 458754, 0, -262143, 458754, 0, -196607, 458754, 0, -131071, 65538, 3, 1, 327682, 0, -393214, 458754, 0, -327678, 458754, 0, -262142, 458754, 0, -196606, 2, 3, -393213, 458754, 0, -327677, 458754, 2, -262141, 458754, 0, -196605, 65538, 3, -65533, 458754, 3, 327683, 131074, 2, -393212, 458754, 0, -327676, 458754, 0, -262140, 327682, 1, 262148, 131074, 2, 327684, 458754, 0, -327675, 458754, 0, -262139, 131074, 3, 196613, 65538, 2, 262149, 458754, 0, -262138, 458754, 0, -196602, 131074, 1, -131066, 262146, 3, 65542, 262146, 0, 131078, 131074, 0, 196614, 458754, 0, -196601, 458754, 0, -131065, 458754, 0, -65529, 131074, 3, 7, 2, 0, 65543, 131074, 0, 131079, 458754, 0)
 
 [node name="Portal" parent="." index="4"]
-position = Vector2(-43, -56)
+position = Vector2(34, 84)
 
-[node name="Spikeball" parent="." index="5" instance=ExtResource("2_el4k4")]
-position = Vector2(38, -40)
+[node name="Pad" parent="." index="5"]
+position = Vector2(0, 17)
+
+[node name="Spikeball" parent="." index="6" instance=ExtResource("2_el4k4")]
+position = Vector2(-48, -80)
+
+[node name="Spikeball2" parent="." index="7" instance=ExtResource("2_el4k4")]
+position = Vector2(48, -80)

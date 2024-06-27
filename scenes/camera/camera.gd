@@ -2,7 +2,7 @@ class_name Camera extends Camera2D
 
 @export var follow_enabled = false
 @export var follow_speed = 3.0
-@export var tilt_magnitude = 0.006
+@export var tilt_magnitude = 0#0.006
 @export var impact_rotation = 5.0
 @export var shake_damping_speed = 1.0
 
