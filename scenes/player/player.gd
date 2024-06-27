@@ -1,20 +1,21 @@
 class_name Player extends RigidBody2D
 
 @export var thrust_speed = 450.0
-@export var turn_speed = 2000.0
+@export var turn_speed = 5000.0
 
 @onready var thrust_particles: GPUParticles2D = $ThrustParticles
 
 var can_move = true
+var torque = 0.0
 
 func _enter_tree() -> void:
 	RoomManager.current_room.player = self
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if !can_move: return
 
-	var x_input = Input.get_axis("left", "right")
-	apply_torque(x_input * turn_speed)
+	torque = rotate_toward(torque, get_angle_to(get_global_mouse_position()) + PI/2, turn_speed * delta)
+	apply_torque(torque * turn_speed)
 
 	var thrust_input = Input.is_action_pressed("thrust")
 	thrust_particles.emitting = thrust_input
