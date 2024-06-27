@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://fsob3bcwgghl"]
+[gd_scene load_steps=4 format=3 uid="uid://fsob3bcwgghl"]
 
 [ext_resource type="PackedScene" uid="uid://d0l1lmio1gtoc" path="res://rooms/level.tscn" id="1_1w6ee"]
 [ext_resource type="PackedScene" uid="uid://dmidwgphesmiq" path="res://scenes/spikeball/spikeball.tscn" id="2_el4k4"]
+[ext_resource type="Resource" uid="uid://parskrghoxk5" path="res://color-palettes/cave.tres" id="2_p0i0s"]
 
 [node name="Level1" instance=ExtResource("1_1w6ee")]
+palette = ExtResource("2_p0i0s")
 
 [node name="Player" parent="." index="0"]
 position = Vector2(0, -22)
