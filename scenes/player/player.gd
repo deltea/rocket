@@ -47,7 +47,7 @@ func die():
 	var rocket_pieces = rocket_pieces_scene.instantiate()
 	rocket_pieces.global_position = global_position
 	rocket_pieces.rotation = rotation
-	RoomManager.current_room.add_child(rocket_pieces)
+	RoomManager.current_room.call_deferred("add_child", rocket_pieces)
 
 func _on_body_entered(body: Node):
 	if body is Spikeball or body is TileMap:

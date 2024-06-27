@@ -1,4 +1,4 @@
-class_name Key extends Area2D
+class_name Dust extends Area2D
 
 @export var hover_speed = 3.0
 @export var hover_magnitude = 0.1
@@ -6,4 +6,8 @@ class_name Key extends Area2D
 
 func _process(delta: float) -> void:
 	position.y = position.y + (sin(Clock.time * hover_speed) * hover_magnitude)
-	rotate(turn_speed * delta)
+	rotate(delta * 2)
+
+func _on_body_entered(body: Node2D):
+	if body is Player:
+		queue_free()

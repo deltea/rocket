@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://myhvdulnh4h1"]
+
+[ext_resource type="Script" path="res://dust/dust.gd" id="1_u8ssa"]
+[ext_resource type="Texture2D" uid="uid://clq2yolvoevh7" path="res://assets/dust.png" id="2_hgbfn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5o7u4"]
+
+[node name="Dust" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_u8ssa")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_hgbfn")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5o7u4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
