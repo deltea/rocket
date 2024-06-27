@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://bxtc5illu43wy" path="res://assets/generic/circle-big.png" id="3_o3pd5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5op7l"]
-bounce = 0.3
 
 [sub_resource type="Curve" id="Curve_6uffu"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.757752, 0.490352), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -34,7 +33,7 @@ height = 8.0
 z_index = 1
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_5op7l")
-angular_damp = 20.0
+angular_damp = 10.0
 script = ExtResource("1_8e7y8")
 
 [node name="Sprite" type="Sprite2D" parent="."]
