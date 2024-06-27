@@ -1,7 +1,7 @@
 class_name Player extends RigidBody2D
 
 @export var thrust_speed = 450.0
-@export var turn_speed = 1500.0
+@export var turn_speed = 2000.0
 
 @onready var thrust_particles: GPUParticles2D = $ThrustParticles
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://fsob3bcwgghl"]
+[gd_scene load_steps=3 format=3 uid="uid://fsob3bcwgghl"]
 
 [ext_resource type="PackedScene" uid="uid://d0l1lmio1gtoc" path="res://rooms/level.tscn" id="1_1w6ee"]
+[ext_resource type="PackedScene" uid="uid://dmidwgphesmiq" path="res://scenes/spikeball/spikeball.tscn" id="2_el4k4"]
 
 [node name="Level1" instance=ExtResource("1_1w6ee")]
 
@@ -14,3 +15,6 @@ layer_1/tile_data = PackedInt32Array(-131080, 458754, 0, -65544, 196610, 1, -8, 
 
 [node name="Portal" parent="." index="4"]
 position = Vector2(-43, -56)
+
+[node name="Spikeball" parent="." index="5" instance=ExtResource("2_el4k4")]
+position = Vector2(38, -40)

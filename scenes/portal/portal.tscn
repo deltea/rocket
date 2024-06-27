@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://cf30e6g3uvil2"]
 
 [ext_resource type="Script" path="res://scenes/portal/portal.gd" id="1_oqy8s"]
+[ext_resource type="Texture2D" uid="uid://c8vebnkhtxxr6" path="res://assets/generic/circle.png" id="2_0fntu"]
 [ext_resource type="Texture2D" uid="uid://dfjn1qkkcndvi" path="res://assets/portal.png" id="2_wwtiq"]
-[ext_resource type="Texture2D" uid="uid://7qru5twwl775" path="res://assets/generic/square.png" id="3_qinkd"]
 
 [sub_resource type="Curve" id="Curve_f4d4r"]
 _data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
@@ -35,14 +35,12 @@ color = Color(1, 0, 0, 1)
 [sub_resource type="CircleShape2D" id="CircleShape2D_hp6p1"]
 
 [node name="Portal" type="Area2D"]
-z_index = -1
 collision_mask = 2
 script = ExtResource("1_oqy8s")
 
 [node name="Particles" type="GPUParticles2D" parent="."]
-amount = 4
 process_material = SubResource("ParticleProcessMaterial_othxp")
-texture = ExtResource("3_qinkd")
+texture = ExtResource("2_0fntu")
 lifetime = 2.0
 preprocess = 2.0
 draw_order = 0

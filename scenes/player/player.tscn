@@ -31,6 +31,7 @@ radius = 3.0
 height = 8.0
 
 [node name="Player" type="RigidBody2D"]
+z_index = 1
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_5op7l")
 angular_damp = 20.0
