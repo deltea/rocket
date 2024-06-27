@@ -23,8 +23,9 @@ func _physics_process(_delta: float) -> void:
 
 func go_into_portal(portal: Portal):
 	can_move = false
-	thrust_particles.emitting = false
+	thrust_particles.set_deferred("emitting", false)
+	process_mode = Node.PROCESS_MODE_DISABLED
 	var tweener = get_tree().create_tween().set_parallel(true)
-	tweener.tween_property(self, "scale", Vector2.ZERO, 1)
+	tweener.tween_property(self, "global_scale", Vector2.ZERO, 1)
 	tweener.tween_property(self, "global_position", portal.position, 1)
 	tweener.tween_property(self, "global_rotation_degrees", global_rotation_degrees + 360, 1)
