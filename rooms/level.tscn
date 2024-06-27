@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0l1lmio1gtoc"]
+[gd_scene load_steps=12 format=3 uid="uid://d0l1lmio1gtoc"]
 
 [ext_resource type="Script" path="res://rooms/level.gd" id="1_0teix"]
 [ext_resource type="PackedScene" uid="uid://ddanmgaltueiq" path="res://scenes/player/player.tscn" id="2_lf1yj"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://driwdcg5fhuee" path="res://assets/background.png" id="4_2x2sn"]
 [ext_resource type="Texture2D" uid="uid://cc6dfl0mgyip0" path="res://assets/background-tileset.png" id="4_bnur7"]
 [ext_resource type="PackedScene" uid="uid://bjplmnq45exjl" path="res://scenes/camera/camera.tscn" id="5_m77t8"]
+[ext_resource type="Texture2D" uid="uid://t80dgkja51kq" path="res://assets/key.png" id="7_yn1ff"]
+[ext_resource type="PackedScene" uid="uid://cf30e6g3uvil2" path="res://scenes/portal/portal.tscn" id="8_lfqqa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ep4x4"]
 texture = ExtResource("3_q0y3n")
@@ -231,3 +233,10 @@ z_index = -20
 texture = ExtResource("4_2x2sn")
 
 [node name="Camera" parent="." instance=ExtResource("5_m77t8")]
+
+[node name="Key" type="Sprite2D" parent="."]
+position = Vector2(-65, -38)
+texture = ExtResource("7_yn1ff")
+
+[node name="Portal" parent="." instance=ExtResource("8_lfqqa")]
+position = Vector2(0, -41)

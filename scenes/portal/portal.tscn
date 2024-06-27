@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cf30e6g3uvil2"]
+
+[ext_resource type="Script" path="res://scenes/portal/portal.gd" id="1_oqy8s"]
+[ext_resource type="Texture2D" uid="uid://dfjn1qkkcndvi" path="res://assets/portal.png" id="2_wwtiq"]
+[ext_resource type="Texture2D" uid="uid://c8vebnkhtxxr6" path="res://assets/generic/circle.png" id="2_xfl6g"]
+
+[sub_resource type="Curve" id="Curve_rc42i"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.742248, 0.331087), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hp6p1"]
+radius = 12.0
+
+[node name="Portal" type="Area2D"]
+script = ExtResource("1_oqy8s")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_wwtiq")
+
+[node name="Particles" type="CPUParticles2D" parent="."]
+amount = 6
+lifetime = 1.75
+preprocess = 2.0
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("2_xfl6g")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.8
+scale_amount_curve = SubResource("Curve_rc42i")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hp6p1")

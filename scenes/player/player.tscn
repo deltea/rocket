@@ -28,6 +28,7 @@ radius = 3.0
 height = 8.0
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
 floor_stop_on_slope = false
 script = ExtResource("1_8e7y8")
 
@@ -48,6 +49,7 @@ fixed_fps = 0
 draw_order = 0
 
 [node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
 
 [node name="CollisionShape" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CapsuleShape2D_8ojcx")
