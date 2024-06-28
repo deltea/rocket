@@ -19,8 +19,13 @@ func _process(delta: float) -> void:
 
 func set_collected(value: bool):
 	collected = value
-	sprite.visible = !value
 	collider.set_deferred("disabled", value)
+	var tweener = get_tree().create_tween().set_trans(Tween.TRANS_EXPO)
+	if value:
+		tweener.tween_property(sprite, "scale", Vector2(1.75, 1.75), 0.15)
+		tweener.tween_property(sprite, "scale", Vector2.ZERO, 0.4)
+	else:
+		tweener.tween_property(sprite, "scale", Vector2.ONE, 1.0)
 
 func _on_body_entered(body: Node2D):
 	if body is Player:
