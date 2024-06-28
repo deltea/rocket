@@ -1,6 +1,6 @@
 class_name Player extends RigidBody2D
 
-@export var thrust_speed = 450.0
+@export var thrust_speed = 350.0
 @export var turn_speed = 3000.0
 @export var rocket_pieces_scene: PackedScene
 
@@ -52,6 +52,7 @@ func die():
 	RoomManager.current_room.call_deferred("add_child", rocket_pieces)
 
 	RoomManager.current_room.camera.shake(0.1, 2.0)
+	RoomManager.current_room.reset_dust()
 
 func _on_body_entered(body: Node):
 	if !can_move: return

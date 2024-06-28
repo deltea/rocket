@@ -4,6 +4,7 @@ class_name Portal extends Area2D
 @export var hover_magnitude = 2.0
 
 var original_pos: Vector2
+var activated = false
 
 func _ready() -> void:
 	original_pos = position
@@ -11,8 +12,11 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	position.y = original_pos.y + (sin(Clock.time * hover_speed) * hover_magnitude)
 
+func activate():
+	activated = true
+
 func _on_body_entered(body: Node2D):
-	if body is Player:
+	if body is Player && activated:
 		RoomManager.current_room.player.go_into_portal(self)
 		await Clock.wait(1.0)
 		RoomManager.next_level()
