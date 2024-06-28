@@ -1,6 +1,6 @@
 class_name Room extends Node2D
 
-@export var palette: Palette
+@export var palette: Texture2D
 
 var camera: Camera
 var player: Player

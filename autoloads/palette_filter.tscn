@@ -1,26 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://dl32rq6akrwr1"]
+[gd_scene load_steps=6 format=3 uid="uid://dl32rq6akrwr1"]
 
 [ext_resource type="Script" path="res://autoloads/palette_filter.gd" id="1_adh26"]
 [ext_resource type="Shader" path="res://shaders/palette_filter.gdshader" id="2_2kqrj"]
-[ext_resource type="Resource" uid="uid://u7k86llint5o" path="res://color-palettes/sunset.tres" id="2_exoxu"]
+[ext_resource type="Texture2D" uid="uid://b5l7cik55j6lo" path="res://color-palettes/forest.png" id="2_7k7a0"]
+[ext_resource type="Texture2D" uid="uid://dkebwt2vn6b6v" path="res://assets/palette-in.png" id="4_li5on"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_05rop"]
 shader = ExtResource("2_2kqrj")
-shader_parameter/old_primary = Color(1, 1, 1, 1)
-shader_parameter/old_accent = Color(1, 0, 0, 1)
-shader_parameter/old_background = Color(0, 0, 1, 1)
-shader_parameter/old_midground = Color(0, 1, 0, 1)
-shader_parameter/old_foreground = Color(0, 0, 0, 1)
-shader_parameter/new_primary = Color(1, 1, 1, 1)
-shader_parameter/new_accent = Color(1, 0, 0, 1)
-shader_parameter/new_background = Color(0, 0, 1, 1)
-shader_parameter/new_midground = Color(0, 1, 0, 1)
-shader_parameter/new_foreground = Color(0, 0, 0, 1)
+shader_parameter/num_colors = 5
+shader_parameter/precision = 0.1
+shader_parameter/palette_in = ExtResource("4_li5on")
 
 [node name="PaletteFilter" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_adh26")
-default_palette = ExtResource("2_exoxu")
+default_palette = ExtResource("2_7k7a0")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_05rop")

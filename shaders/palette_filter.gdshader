@@ -2,25 +2,23 @@ shader_type canvas_item;
 
 uniform sampler2D screen_texture : hint_screen_texture, filter_nearest;
 
-uniform vec4 old_primary : source_color = vec4(1, 1, 1, 1);
-uniform vec4 old_accent : source_color = vec4(1, 0, 0, 1);
-uniform vec4 old_background : source_color = vec4(0, 0, 1, 1);
-uniform vec4 old_midground : source_color = vec4(0, 1, 0, 1);
-uniform vec4 old_foreground : source_color = vec4(0, 0, 0, 1);
+uniform int num_colors;
+uniform sampler2D palette_in;
+uniform sampler2D palette_out;
+uniform float precision : hint_range(0.0, 1.0, 0.1) = 0.1;
 
-uniform vec4 new_primary : source_color = vec4(1, 1, 1, 1);
-uniform vec4 new_accent : source_color = vec4(1, 0, 0, 1);
-uniform vec4 new_background : source_color = vec4(0, 0, 1, 1);
-uniform vec4 new_midground : source_color = vec4(0, 1, 0, 1);
-uniform vec4 new_foreground : source_color = vec4(0, 0, 0, 1);
+vec4 swap_color(vec4 color) {
+  float inc = 1.0 / float(num_colors);
+  for (float i = 0.0; i < 1.0; i += inc) {
+    vec2 uv = vec2(i + (inc / 2.0), 0.0);
+    vec4 color_in = texture(palette_in, uv);
+    if (distance(color, color_in) <= precision) {
+      return texture(palette_out, uv);
+    }
+  }
+}
 
 void fragment() {
 	vec4 color = texture(screen_texture, SCREEN_UV);
-
-	if (color == old_primary) COLOR = new_primary;
-	else if (color == old_accent) COLOR = new_accent;
-	else if (color == old_background) COLOR = new_background;
-	else if (color == old_midground) COLOR = new_midground;
-	else if (color == old_foreground) COLOR = new_foreground;
-	else COLOR = color;
+	COLOR = swap_color(color);
 }
