@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddanmgaltueiq"]
+[gd_scene load_steps=10 format=3 uid="uid://ddanmgaltueiq"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_8e7y8"]
 [ext_resource type="Texture2D" uid="uid://c7jdim0ct1cid" path="res://assets/player.png" id="2_8ka1b"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bxtc5illu43wy" path="res://assets/generic/circle-big.png" id="3_o3pd5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5op7l"]
-friction = 0.8
+rough = true
 
 [sub_resource type="Curve" id="Curve_6uffu"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.757752, 0.490352), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -26,6 +26,9 @@ scale_min = 0.3
 scale_max = 0.4
 scale_curve = SubResource("CurveTexture_3dbl4")
 color = Color(0, 0, 1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xw08j"]
+size = Vector2(10, 3)
 
 [node name="Player" type="RigidBody2D"]
 z_index = 1
@@ -53,5 +56,13 @@ lifetime = 0.5
 fixed_fps = 0
 draw_order = 0
 
+[node name="LandingArea" type="Area2D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="LandingArea"]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_xw08j")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_entered" from="LandingArea" to="." method="_on_landing_area_body_entered"]
+[connection signal="body_exited" from="LandingArea" to="." method="_on_landing_area_body_exited"]

@@ -30,6 +30,9 @@ func _physics_process(delta: float) -> void:
 	if thrust_input:
 		apply_force(Vector2.from_angle(rotation - PI / 2) * thrust_speed)
 
+	if Input.is_action_just_pressed("restart"):
+		die()
+
 func go_into_portal(portal: Portal):
 	can_move = false
 	thrust_particles.emitting = false
@@ -60,9 +63,11 @@ func _on_body_entered(body: Node):
 
 	if body is Spikeball or body is TileMap:
 		die()
-	elif body is Pad:
+
+func _on_landing_area_body_entered(body: Node2D):
+	if body is Pad:
 		current_turn_speed = 0.0
 
-func _on_body_exited(body: Node):
+func _on_landing_area_body_exited(body:Node2D):
 	if body is Pad:
 		current_turn_speed = turn_speed
