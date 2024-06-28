@@ -53,7 +53,7 @@ restart={
 
 [physics]
 
-2d/default_gravity=190.0
+2d/default_gravity=200.0
 
 [rendering]
 

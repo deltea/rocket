@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://plt0eep34qn7"
-path="res://.godot/imported/bittersweet.png-30da315abaf365b4c531950f38a31a64.ctex"
+uid="uid://leap43qq18vo"
+path="res://.godot/imported/crimson.png-4f397d214e68c6af42df3042e28847bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://color-palettes/bittersweet.png"
-dest_files=["res://.godot/imported/bittersweet.png-30da315abaf365b4c531950f38a31a64.ctex"]
+source_file="res://color-palettes/crimson.png"
+dest_files=["res://.godot/imported/crimson.png-4f397d214e68c6af42df3042e28847bb.ctex"]
 
 [params]
 

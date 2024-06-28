@@ -1,6 +1,6 @@
 class_name Player extends RigidBody2D
 
-@export var thrust_speed = 350.0
+@export var thrust_speed = 400.0
 @export var turn_speed = 3000.0
 @export var rocket_pieces_scene: PackedScene
 

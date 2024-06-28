@@ -20,6 +20,7 @@ func change_room(room: String):
 	get_tree().change_scene_to_packed(scene)
 
 	await Clock.wait(0.5)
+	PaletteFilter.set_color_palette()
 	player.play("transition")
 
 func next_level():

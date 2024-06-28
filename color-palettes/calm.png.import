@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfxcr41s5krta"
-path="res://.godot/imported/mellow.png-2e248607d33bb4666502aea5767ad616.ctex"
+uid="uid://yx1r5ejhw3p8"
+path="res://.godot/imported/calm.png-06cf1dae1847cdff84e6e38368e331a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://color-palettes/mellow.png"
-dest_files=["res://.godot/imported/mellow.png-2e248607d33bb4666502aea5767ad616.ctex"]
+source_file="res://color-palettes/calm.png"
+dest_files=["res://.godot/imported/calm.png-06cf1dae1847cdff84e6e38368e331a5.ctex"]
 
 [params]
 

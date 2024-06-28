@@ -36,6 +36,7 @@ collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_5op7l")
 max_contacts_reported = 1
 contact_monitor = true
+linear_damp = 0.75
 angular_damp = 10.0
 script = ExtResource("1_8e7y8")
 rocket_pieces_scene = ExtResource("2_uvvah")
