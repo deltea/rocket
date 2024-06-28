@@ -5,6 +5,8 @@ class_name Player extends RigidBody2D
 @export var rocket_pieces_scene: PackedScene
 
 @onready var thrust_particles: GPUParticles2D = $ThrustParticles
+@onready var sprite: Sprite2D = $Sprite
+@onready var collider: CollisionPolygon2D = $CollisionPolygon
 
 var can_move = true
 var torque = 0.0
@@ -30,12 +32,12 @@ func _physics_process(delta: float) -> void:
 func go_into_portal(portal: Portal):
 	can_move = false
 	thrust_particles.emitting = false
+	collider.set_deferred("disabled", true)
+
 	var tweener = get_tree().create_tween().set_parallel(true)
-	tweener.tween_property(self, "scale", Vector2.ZERO, 1)
+	tweener.tween_property(sprite, "scale", Vector2.ZERO, 1)
 	tweener.tween_property(self, "global_position", portal.position, 1)
 	tweener.tween_property(self, "global_rotation_degrees", global_rotation_degrees + 360, 1)
-	await Clock.wait(1.0)
-	scale = Vector2.ZERO
 
 func die():
 	PhysicsServer2D.body_set_state(
