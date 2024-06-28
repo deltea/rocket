@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://fsob3bcwgghl"]
 
 [ext_resource type="PackedScene" uid="uid://d0l1lmio1gtoc" path="res://rooms/level.tscn" id="1_1w6ee"]
-[ext_resource type="Texture2D" uid="uid://yx1r5ejhw3p8" path="res://color-palettes/calm.png" id="2_rs05i"]
+[ext_resource type="Texture2D" uid="uid://qyd4ot07q87s" path="res://color-palettes/water.png" id="2_cncod"]
 [ext_resource type="PackedScene" uid="uid://osoqlhrnqa8" path="res://scenes/pad/pad.tscn" id="3_g6fvm"]
 [ext_resource type="PackedScene" uid="uid://myhvdulnh4h1" path="res://dust/dust.tscn" id="4_70q3x"]
 [ext_resource type="PackedScene" uid="uid://bjm40f2b6c1mk" path="res://scenes/moving-spikeball/moving_spikeball.tscn" id="5_ccg8o"]
@@ -19,7 +19,7 @@ _data = {
 point_count = 2
 
 [node name="Level1" instance=ExtResource("1_1w6ee")]
-palette = ExtResource("2_rs05i")
+palette = ExtResource("2_cncod")
 
 [node name="Player" parent="." index="0"]
 position = Vector2(0, 7)
@@ -37,6 +37,12 @@ position = Vector2(0, 17)
 
 [node name="Dust" parent="Dusts" index="0" instance=ExtResource("4_70q3x")]
 position = Vector2(-40, 82)
+
+[node name="Dust2" parent="Dusts" index="1" instance=ExtResource("4_70q3x")]
+position = Vector2(-88, 18)
+
+[node name="Dust3" parent="Dusts" index="2" instance=ExtResource("4_70q3x")]
+position = Vector2(88, 18)
 
 [node name="Pad2" parent="." index="7" instance=ExtResource("3_g6fvm")]
 position = Vector2(-40, 97)

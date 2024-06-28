@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://leap43qq18vo"
-path="res://.godot/imported/crimson.png-4f397d214e68c6af42df3042e28847bb.ctex"
+uid="uid://bf0ii6hpm33dq"
+path="res://.godot/imported/plant.png-db84fac19d4c1fb52f93191013c92336.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://color-palettes/crimson.png"
-dest_files=["res://.godot/imported/crimson.png-4f397d214e68c6af42df3042e28847bb.ctex"]
+source_file="res://color-palettes/plant.png"
+dest_files=["res://.godot/imported/plant.png-db84fac19d4c1fb52f93191013c92336.ctex"]
 
 [params]
 
