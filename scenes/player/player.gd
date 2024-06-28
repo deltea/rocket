@@ -49,6 +49,10 @@ func die():
 	rocket_pieces.rotation = rotation
 	RoomManager.current_room.call_deferred("add_child", rocket_pieces)
 
+	RoomManager.current_room.camera.shake(0.1, 2.0)
+
 func _on_body_entered(body: Node):
+	if !can_move: return
+
 	if body is Spikeball or body is TileMap:
 		die()
