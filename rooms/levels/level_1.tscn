@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://fsob3bcwgghl"]
 
 [ext_resource type="PackedScene" uid="uid://d0l1lmio1gtoc" path="res://rooms/level.tscn" id="1_1w6ee"]
-[ext_resource type="Texture2D" uid="uid://qyd4ot07q87s" path="res://color-palettes/water.png" id="2_cncod"]
+[ext_resource type="Texture2D" uid="uid://oelthmh8heei" path="res://color-palettes/spicy.png" id="2_eod5p"]
 [ext_resource type="PackedScene" uid="uid://osoqlhrnqa8" path="res://scenes/pad/pad.tscn" id="3_g6fvm"]
 [ext_resource type="PackedScene" uid="uid://myhvdulnh4h1" path="res://dust/dust.tscn" id="4_70q3x"]
 [ext_resource type="PackedScene" uid="uid://bjm40f2b6c1mk" path="res://scenes/moving-spikeball/moving_spikeball.tscn" id="5_ccg8o"]
@@ -19,10 +19,11 @@ _data = {
 point_count = 2
 
 [node name="Level1" instance=ExtResource("1_1w6ee")]
-palette = ExtResource("2_cncod")
+palette = ExtResource("2_eod5p")
 
 [node name="Player" parent="." index="0"]
 position = Vector2(0, 7)
+gravity_scale = -1.0
 
 [node name="TileMap" parent="." index="2"]
 position = Vector2(0, 2)

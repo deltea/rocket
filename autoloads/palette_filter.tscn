@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://autoloads/palette_filter.gd" id="1_adh26"]
 [ext_resource type="Shader" path="res://shaders/palette_filter.gdshader" id="2_2kqrj"]
-[ext_resource type="Texture2D" uid="uid://b5l7cik55j6lo" path="res://color-palettes/forest.png" id="2_7k7a0"]
+[ext_resource type="Texture2D" uid="uid://yx1r5ejhw3p8" path="res://color-palettes/calm.png" id="2_pbf1u"]
 [ext_resource type="Texture2D" uid="uid://dkebwt2vn6b6v" path="res://assets/palette-in.png" id="4_li5on"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_05rop"]
@@ -14,7 +14,7 @@ shader_parameter/palette_in = ExtResource("4_li5on")
 [node name="PaletteFilter" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_adh26")
-default_palette = ExtResource("2_7k7a0")
+default_palette = ExtResource("2_pbf1u")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_05rop")
