@@ -20,7 +20,7 @@ point_count = 2
 [node name="Level1" instance=ExtResource("1_1w6ee")]
 
 [node name="Player" parent="." index="0"]
-position = Vector2(0, 7)
+position = Vector2(0, 16)
 
 [node name="TileMap" parent="." index="2"]
 position = Vector2(0, 2)

@@ -45,12 +45,6 @@ func go_into_portal(portal: Portal):
 	tweener.tween_property(self, "global_rotation_degrees", global_rotation_degrees + 360, 1)
 
 func die():
-	PhysicsServer2D.body_set_state(
-    get_rid(),
-    PhysicsServer2D.BODY_STATE_TRANSFORM,
-    Transform2D.IDENTITY.translated(original_pos)
-	)
-
 	var rocket_pieces = rocket_pieces_scene.instantiate()
 	rocket_pieces.global_position = global_position
 	rocket_pieces.rotation = rotation
@@ -58,6 +52,12 @@ func die():
 
 	RoomManager.current_room.camera.shake(0.1, 2.0)
 	RoomManager.current_room.reset_dust()
+
+	PhysicsServer2D.body_set_state(
+    get_rid(),
+    PhysicsServer2D.BODY_STATE_TRANSFORM,
+    Transform2D.IDENTITY.translated(original_pos)
+	)
 
 func _on_body_entered(body: Node):
 	if !can_move: return

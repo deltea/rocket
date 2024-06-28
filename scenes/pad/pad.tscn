@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c7qxx5s8olujr" path="res://assets/pad.png" id="1_u6khq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6hqv"]
-size = Vector2(32, 2)
+size = Vector2(28, 2)
 
 [node name="Pad" type="StaticBody2D"]
 script = ExtResource("1_py5lm")

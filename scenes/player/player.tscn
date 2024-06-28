@@ -28,7 +28,7 @@ scale_curve = SubResource("CurveTexture_3dbl4")
 color = Color(0, 0, 1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xw08j"]
-size = Vector2(10, 3)
+size = Vector2(10, 2)
 
 [node name="Player" type="RigidBody2D"]
 z_index = 1
@@ -42,14 +42,17 @@ script = ExtResource("1_8e7y8")
 rocket_pieces_scene = ExtResource("2_uvvah")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -9)
 texture = ExtResource("2_8ka1b")
 
 [node name="CollisionPolygon" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -9)
 polygon = PackedVector2Array(7, 9, 7, 5, 4, 2, 4, -4, 0, -9, -4, -4, -4, 2, -7, 5, -7, 9, -2, 5, 2, 5)
 
 [node name="ThrustParticles" type="GPUParticles2D" parent="."]
 z_index = -1
-position = Vector2(0, 7)
+position = Vector2(0, -2)
+emitting = false
 amount = 12
 process_material = SubResource("ParticleProcessMaterial_vlwwk")
 texture = ExtResource("3_o3pd5")
@@ -60,7 +63,6 @@ draw_order = 0
 [node name="LandingArea" type="Area2D" parent="."]
 
 [node name="CollisionShape" type="CollisionShape2D" parent="LandingArea"]
-position = Vector2(0, 8.5)
 shape = SubResource("RectangleShape2D_xw08j")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
