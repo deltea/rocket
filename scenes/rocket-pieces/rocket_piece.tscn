@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ce8q1n0j8j4pg" path="res://assets/rocket-pieces.png" id="1_jlpur"]
 
 [node name="RocketPiece" type="RigidBody2D"]
+z_index = -1
 collision_layer = 0
 script = ExtResource("1_ee70m")
 

@@ -17,6 +17,7 @@ rotates = false
 [node name="Spikeball" parent="PathFollow" instance=ExtResource("2_fpg7s")]
 
 [node name="Line" type="Line2D" parent="."]
+self_modulate = Color(0.333333, 0.333333, 0.333333, 1)
 z_index = -1
 texture_repeat = 2
 width = 4.0

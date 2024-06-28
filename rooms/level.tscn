@@ -23,7 +23,7 @@ position_smoothing_speed = 2.0
 layer_0/tile_data = PackedInt32Array(196605, 1, 0, 196606, 458753, 0, 196607, 458753, 0, 131072, 458753, 0, 131073, 458753, 0, 131074, 65537, 0)
 
 [node name="Background" type="Sprite2D" parent="."]
-self_modulate = Color(0.333333, 0.333333, 0.333333, 1)
+self_modulate = Color(0.266667, 0.266667, 0.266667, 1)
 z_index = -20
 scale = Vector2(320, 240)
 texture = ExtResource("7_nc00j")

@@ -5,7 +5,7 @@ class_name RocketPiece extends RigidBody2D
 
 func _ready() -> void:
 	apply_impulse(Vector2.from_angle(randf_range(0, PI*2)) * 50)
-	await Clock.wait(randf_range(0.8, 1.5))
+	await Clock.wait(randf_range(1.5, 2.0))
 
 	timer.start()
 	await Clock.wait(1)
