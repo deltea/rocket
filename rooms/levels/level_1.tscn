@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://fsob3bcwgghl"]
+[gd_scene load_steps=8 format=3 uid="uid://fsob3bcwgghl"]
 
 [ext_resource type="PackedScene" uid="uid://d0l1lmio1gtoc" path="res://rooms/level.tscn" id="1_1w6ee"]
 [ext_resource type="Texture2D" uid="uid://b1md2qk2y5pga" path="res://color-palettes/electric.png" id="2_g7ldo"]
+[ext_resource type="PackedScene" uid="uid://osoqlhrnqa8" path="res://scenes/pad/pad.tscn" id="3_g6fvm"]
 [ext_resource type="PackedScene" uid="uid://myhvdulnh4h1" path="res://dust/dust.tscn" id="4_70q3x"]
 [ext_resource type="PackedScene" uid="uid://bjm40f2b6c1mk" path="res://scenes/moving-spikeball/moving_spikeball.tscn" id="5_ccg8o"]
 
@@ -21,7 +22,7 @@ point_count = 2
 palette = ExtResource("2_g7ldo")
 
 [node name="Player" parent="." index="0"]
-position = Vector2(0, 5)
+position = Vector2(0, 7)
 
 [node name="TileMap" parent="." index="2"]
 position = Vector2(0, 2)
@@ -34,10 +35,13 @@ position = Vector2(40, 82)
 [node name="Pad" parent="." index="5"]
 position = Vector2(0, 17)
 
-[node name="MovingSpikeball" parent="." index="6" instance=ExtResource("5_ccg8o")]
+[node name="Pad2" parent="." index="6" instance=ExtResource("3_g6fvm")]
+position = Vector2(-40, 97)
+
+[node name="MovingSpikeball" parent="." index="7" instance=ExtResource("5_ccg8o")]
 curve = SubResource("Curve2D_cu6nr")
 
-[node name="MovingSpikeball2" parent="." index="7" instance=ExtResource("5_ccg8o")]
+[node name="MovingSpikeball2" parent="." index="8" instance=ExtResource("5_ccg8o")]
 position = Vector2(-80, 0)
 curve = SubResource("Curve2D_amjmo")
 

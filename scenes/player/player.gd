@@ -11,6 +11,7 @@ class_name Player extends RigidBody2D
 var can_move = true
 var torque = 0.0
 var original_pos: Vector2
+var current_turn_speed = turn_speed
 
 func _enter_tree() -> void:
 	RoomManager.current_room.player = self
@@ -22,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	if !can_move: return
 
 	torque = rotate_toward(torque, get_angle_to(get_global_mouse_position()) + PI/2, turn_speed * delta)
-	apply_torque(torque * turn_speed)
+	apply_torque(torque * current_turn_speed)
 
 	var thrust_input = Input.is_action_pressed("thrust")
 	thrust_particles.emitting = thrust_input
@@ -59,3 +60,9 @@ func _on_body_entered(body: Node):
 
 	if body is Spikeball or body is TileMap:
 		die()
+	elif body is Pad:
+		current_turn_speed = 0.0
+
+func _on_body_exited(body: Node):
+	if body is Pad:
+		current_turn_speed = turn_speed
