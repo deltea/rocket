@@ -211,6 +211,7 @@ sources/1 = SubResource("TileSetAtlasSource_ep4x4")
 sources/2 = SubResource("TileSetAtlasSource_rjll7")
 
 [node name="TileMap" type="TileMap"]
+position = Vector2(0, 8)
 tile_set = SubResource("TileSet_ql7jh")
 format = 2
 layer_0/name = "Foreground"

@@ -10,10 +10,11 @@
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_0teix")
-metadata/_edit_horizontal_guides_ = [-128.0, 128.0]
+metadata/_edit_horizontal_guides_ = [-120.0, 120.0]
 metadata/_edit_vertical_guides_ = [-160.0, 160.0]
 
 [node name="Player" parent="." instance=ExtResource("2_lf1yj")]
+position = Vector2(0, 21)
 
 [node name="Camera" parent="." instance=ExtResource("5_m77t8")]
 ignore_rotation = false

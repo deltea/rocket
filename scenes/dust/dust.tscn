@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://myhvdulnh4h1"]
 
-[ext_resource type="Script" path="res://dust/dust.gd" id="1_u8ssa"]
+[ext_resource type="Script" path="res://scenes/dust/dust.gd" id="1_u8ssa"]
 [ext_resource type="Texture2D" uid="uid://clq2yolvoevh7" path="res://assets/dust.png" id="2_hgbfn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5o7u4"]

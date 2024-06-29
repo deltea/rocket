@@ -29,6 +29,7 @@ window/size/viewport_height=240
 window/size/window_width_override=1280
 window/size/window_height_override=960
 window/stretch/mode="viewport"
+window/default_gravity=200.0
 
 [input]
 
