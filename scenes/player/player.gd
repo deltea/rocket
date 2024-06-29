@@ -60,6 +60,9 @@ func die():
     Transform2D.IDENTITY.translated(original_pos)
 	)
 
+func antigravity():
+	gravity_scale *= -1
+
 func _on_body_entered(body: Node):
 	if !can_move: return
 

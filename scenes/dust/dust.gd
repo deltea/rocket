@@ -48,4 +48,4 @@ func _on_body_entered(body: Node2D):
 			DUST_TYPE.BASIC:
 				pass
 			DUST_TYPE.ANTIGRAVITY:
-				RoomManager.current_room.player.gravity_scale *= -1
+				RoomManager.current_room.player.antigravity()
