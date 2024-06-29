@@ -36,9 +36,11 @@ position = Vector2(0, 7)
 
 [node name="Dust" parent="Dusts" index="0" instance=ExtResource("4_70q3x")]
 position = Vector2(-40, 72)
+dust_type = 1
 
 [node name="Dust2" parent="Dusts" index="1" instance=ExtResource("4_70q3x")]
 position = Vector2(-96, 0)
+dust_type = 1
 
 [node name="Dust3" parent="Dusts" index="2" instance=ExtResource("4_70q3x")]
 position = Vector2(88, 8)

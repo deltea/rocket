@@ -53,6 +53,7 @@ func die():
 	RoomManager.current_room.camera.shake(0.1, 2.0)
 	RoomManager.current_room.reset_dust()
 
+	gravity_scale = 1
 	PhysicsServer2D.body_set_state(
     get_rid(),
     PhysicsServer2D.BODY_STATE_TRANSFORM,
