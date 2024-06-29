@@ -11,7 +11,7 @@ class_name Player extends RigidBody2D
 var can_move = true
 var torque = 0.0
 var original_pos: Vector2
-var is_on_pad = true
+var is_on_pad = false
 
 func _enter_tree() -> void:
 	RoomManager.current_room.player = self
