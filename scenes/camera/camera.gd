@@ -14,10 +14,11 @@ func _enter_tree() -> void:
 	RoomManager.current_room.camera = self
 
 func _process(delta: float) -> void:
-	if follow_enabled:
-		position = position.lerp(RoomManager.current_room.player.position, follow_speed * delta)
-	else:
-		rotation_degrees = -(RoomManager.current_room.player.position.x - position.x) * tilt_magnitude
+	if RoomManager.current_room.player:
+		if follow_enabled:
+			position = position.lerp(RoomManager.current_room.player.position, follow_speed * delta)
+		else:
+			rotation_degrees = -(RoomManager.current_room.player.position.x - position.x) * tilt_magnitude
 
 	if shake_duration > 0:
 		shake_offset = Vector2.from_angle(randf_range(0, PI*2)) * shake_magnitude
