@@ -7,10 +7,10 @@ var palette: Texture2D
 func _ready() -> void:
 	set_color_palette()
 
-func set_color_palette():
+func set_color_palette(new_palette: Texture2D = null):
 	palette = default_palette
-	if RoomManager.current_room.palette:
-		palette = RoomManager.current_room.palette
+	if new_palette:
+		palette = new_palette
 
 	print("color palette changed to " + palette.resource_path)
 

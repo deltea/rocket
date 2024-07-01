@@ -4,4 +4,4 @@ func _ready() -> void:
 	camera = $Camera
 
 func _process(delta: float) -> void:
-	camera.global_position = get_global_mouse_position() * 0.1
+	camera.global_position = get_global_mouse_position() * 0.05

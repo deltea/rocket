@@ -20,3 +20,4 @@ default_palette = ExtResource("2_7k7a0")
 material = SubResource("ShaderMaterial_05rop")
 offset_right = 320.0
 offset_bottom = 240.0
+mouse_filter = 1
