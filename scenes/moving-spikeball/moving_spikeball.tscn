@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/moving-spikeball/moving_spikeball.gd" id="1_s5npq"]
 [ext_resource type="PackedScene" uid="uid://dmidwgphesmiq" path="res://scenes/spikeball/spikeball.tscn" id="2_fpg7s"]
-[ext_resource type="Texture2D" uid="uid://wi2jw0nda3uj" path="res://assets/dotted-line.png" id="3_76t37"]
+[ext_resource type="PackedScene" uid="uid://dqm2jcab6otjm" path="res://scenes/dotted-line/dotted_line.tscn" id="3_pf0al"]
 
 [sub_resource type="Curve2D" id="Curve2D_mguwo"]
 
@@ -16,10 +16,6 @@ rotates = false
 
 [node name="Spikeball" parent="PathFollow" instance=ExtResource("2_fpg7s")]
 
-[node name="Line" type="Line2D" parent="."]
+[node name="DottedLine" parent="." instance=ExtResource("3_pf0al")]
 self_modulate = Color(0.333333, 0.333333, 0.333333, 1)
 z_index = -1
-texture_repeat = 2
-width = 4.0
-texture = ExtResource("3_76t37")
-texture_mode = 1

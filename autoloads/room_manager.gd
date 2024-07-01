@@ -6,6 +6,7 @@ var current_room: Room
 
 func _ready() -> void:
 	player.play("transition")
+	PaletteFilter.set_color_palette(current_room.palette)
 
 func change_room(room: String):
 	player.play_backwards("transition")

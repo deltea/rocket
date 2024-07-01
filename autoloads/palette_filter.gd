@@ -4,9 +4,6 @@ extends CanvasLayer
 
 var palette: Texture2D
 
-func _ready() -> void:
-	set_color_palette()
-
 func set_color_palette(new_palette: Texture2D = null):
 	palette = default_palette
 	if new_palette:

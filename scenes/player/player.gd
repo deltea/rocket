@@ -26,12 +26,12 @@ func _physics_process(delta: float) -> void:
 		torque = rotate_toward(torque, get_angle_to(get_global_mouse_position()) + PI/2, turn_speed * delta)
 		apply_torque(torque * turn_speed)
 
-	var thrust_input = Input.is_action_pressed("thrust")
+	var thrust_input = Input.is_action_pressed("left_mouse")
 	thrust_particles.emitting = thrust_input
 	if thrust_input:
 		apply_force(Vector2.from_angle(rotation - PI / 2) * thrust_speed)
 
-	if Input.is_action_just_pressed("restart"):
+	if Input.is_action_just_pressed("r"):
 		die()
 
 func go_into_portal(portal: Portal):

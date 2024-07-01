@@ -4,10 +4,10 @@ class_name MovingSpikeball extends Path2D
 @export var ping_pong = true
 
 @onready var path_follow: PathFollow2D = $PathFollow
-@onready var line: Line2D = $Line
+@onready var dotted_line: Line2D = $DottedLine
 
 func _ready() -> void:
-	line.points = curve.get_baked_points()
+	dotted_line.points = curve.get_baked_points()
 
 func _process(delta: float) -> void:
 	if ping_pong:
