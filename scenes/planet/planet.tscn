@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dj8tahg8q65fl"]
+[gd_scene load_steps=4 format=3 uid="uid://dj8tahg8q65fl"]
 
 [ext_resource type="Script" path="res://scenes/planet/planet.gd" id="1_mhy3o"]
 [ext_resource type="Texture2D" uid="uid://0ukpqw2h8gx3" path="res://assets/planets/rock.png" id="2_8cgox"]
-[ext_resource type="Texture2D" uid="uid://cdlmxi2qqgsio" path="res://assets/planet-background.png" id="3_km5i6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0lwt8"]
-radius = 32.0156
+radius = 43.0116
 
 [node name="Planet" type="Area2D"]
 script = ExtResource("1_mhy3o")
@@ -15,12 +14,6 @@ texture = ExtResource("2_8cgox")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0lwt8")
-
-[node name="Background" type="Sprite2D" parent="."]
-visible = false
-self_modulate = Color(0, 0, 1, 1)
-z_index = -1
-texture = ExtResource("3_km5i6")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

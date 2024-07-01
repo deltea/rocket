@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 
 func _on_mouse_entered():
 	PaletteFilter.set_color_palette(palette)
+	RoomManager.current_room.planet_hovered(self)
 	print("Mouse entered ", area_name)
 	hovered = true
 
