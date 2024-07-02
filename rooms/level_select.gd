@@ -5,6 +5,8 @@ class_name LevelSelect extends Room
 @export var dotted_line_scene: PackedScene
 @export var parallax_effect = 0.05
 @export var star_texture: Texture2D
+@export var big_star_texture: Texture2D
+@export var big_star_probability = 0.05
 @export var star_num = 100
 @export var camera_smoothing = 10.0
 
@@ -23,7 +25,7 @@ func _ready() -> void:
 
 	for i in range(star_num):
 		var star = Sprite2D.new()
-		star.texture = star_texture
+		star.texture = big_star_texture if randf() < big_star_probability else star_texture
 		star.global_position = Vector2(randf_range(-160, 160), randf_range(-120, 120 + 320))
 		star_parent.add_child(star)
 
@@ -40,7 +42,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	camera_pos = lerp(camera_pos, camera_target_pos, camera_smoothing * delta)
-	camera.global_position = camera_pos# + get_global_mouse_position() * camera_look
+	camera.global_position = camera_pos + get_global_mouse_position() * camera_look
 
 	galaxy.global_position = get_global_mouse_position() * parallax_effect
 	star_parent.global_position = get_global_mouse_position() * parallax_effect * 2
