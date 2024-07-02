@@ -15,10 +15,6 @@ var player_offset = Vector2.ZERO
 func _enter_tree() -> void:
 	RoomManager.current_room.camera = self
 
-func _ready() -> void:
-	if RoomManager.current_room.player:
-		player_offset = RoomManager.current_room.player.global_position * player_strength
-
 func _process(delta: float) -> void:
 	if RoomManager.current_room.player:
 		if follow_enabled:
@@ -33,6 +29,8 @@ func _process(delta: float) -> void:
 		shake_duration = 0
 		shake_offset = Vector2.ZERO
 
+	if RoomManager.current_room.player:
+		player_offset = RoomManager.current_room.player.global_position * player_strength
 	offset = shake_offset + player_offset
 
 func shake(duration: float, magnitude: float):
