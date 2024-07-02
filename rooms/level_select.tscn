@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c8my6r52a3o5m"]
+[gd_scene load_steps=22 format=3 uid="uid://c8my6r52a3o5m"]
 
 [ext_resource type="Script" path="res://rooms/level_select.gd" id="1_rv7uv"]
 [ext_resource type="PackedScene" uid="uid://dqm2jcab6otjm" path="res://scenes/dotted-line/dotted_line.tscn" id="2_26laj"]
@@ -10,22 +10,24 @@
 [ext_resource type="Texture2D" uid="uid://dpodt2t43l5vk" path="res://assets/big-star.png" id="4_khq40"]
 [ext_resource type="PackedScene" uid="uid://dj8tahg8q65fl" path="res://scenes/planet/planet.tscn" id="6_nrkyk"]
 [ext_resource type="PackedScene" uid="uid://bjplmnq45exjl" path="res://scenes/camera/camera.tscn" id="6_ygtsw"]
-[ext_resource type="Texture2D" uid="uid://rewyjfctxt7t" path="res://color-palettes/cherry.png" id="7_8ipkw"]
 [ext_resource type="Texture2D" uid="uid://cdlmxi2qqgsio" path="res://assets/planet-selector.png" id="7_i5qhe"]
 [ext_resource type="Texture2D" uid="uid://b1md2qk2y5pga" path="res://color-palettes/electric.png" id="8_ulbxh"]
 [ext_resource type="Texture2D" uid="uid://b5l7cik55j6lo" path="res://color-palettes/forest.png" id="9_sl37e"]
 [ext_resource type="Texture2D" uid="uid://dy8ev3uv4wl4k" path="res://assets/planets/saturn.png" id="9_uddeu"]
-[ext_resource type="Texture2D" uid="uid://bh7ddtnkw5mu6" path="res://color-palettes/gold.png" id="10_0gaxt"]
 [ext_resource type="Texture2D" uid="uid://cafpt6ok536h2" path="res://assets/planets/mushroom.png" id="11_gk1fh"]
+[ext_resource type="Texture2D" uid="uid://oyw24r446gq6" path="res://color-palettes/silver.png" id="11_ixav7"]
+[ext_resource type="Texture2D" uid="uid://oelthmh8heei" path="res://color-palettes/spicy.png" id="13_e3sb7"]
 [ext_resource type="PackedScene" uid="uid://cmhnjeepvjian" path="res://scenes/grid/grid.tscn" id="17_xkpsp"]
+[ext_resource type="Texture2D" uid="uid://do2wnkt8yjiwh" path="res://assets/planets/tree.png" id="17_xmepw"]
 [ext_resource type="Texture2D" uid="uid://bf64i3lpsk4fb" path="res://assets/level.png" id="18_wlxpm"]
+[ext_resource type="Texture2D" uid="uid://ce0bwwb828l6s" path="res://assets/planets/factory.png" id="19_tpjre"]
 
 [node name="LevelSelect" type="Node2D"]
 script = ExtResource("1_rv7uv")
 dotted_line_scene = ExtResource("2_26laj")
 star_texture = ExtResource("3_87oid")
 big_star_texture = ExtResource("4_khq40")
-palette = ExtResource("2_ir6kf")
+palette = ExtResource("11_ixav7")
 metadata/_edit_vertical_guides_ = [-160.0, 160.0]
 metadata/_edit_horizontal_guides_ = [-120.0, 120.0, 360.0]
 
@@ -51,27 +53,27 @@ texture = ExtResource("7_i5qhe")
 
 [node name="Planet" parent="ParallaxLayers/Layer1/Planets" instance=ExtResource("6_nrkyk")]
 position = Vector2(-88, -62)
-palette = ExtResource("2_ir6kf")
+palette = ExtResource("11_ixav7")
 texture = ExtResource("2_pq22d")
 
 [node name="Planet2" parent="ParallaxLayers/Layer1/Planets" instance=ExtResource("6_nrkyk")]
 position = Vector2(-80, 56)
-palette = ExtResource("7_8ipkw")
+palette = ExtResource("13_e3sb7")
 texture = ExtResource("9_uddeu")
 
 [node name="Planet3" parent="ParallaxLayers/Layer1/Planets" instance=ExtResource("6_nrkyk")]
 position = Vector2(72, 52)
-palette = ExtResource("8_ulbxh")
+palette = ExtResource("2_ir6kf")
 texture = ExtResource("11_gk1fh")
 
 [node name="Planet4" parent="ParallaxLayers/Layer1/Planets" instance=ExtResource("6_nrkyk")]
 position = Vector2(83, -54)
 palette = ExtResource("9_sl37e")
-texture = ExtResource("11_gk1fh")
+texture = ExtResource("17_xmepw")
 
 [node name="Planet5" parent="ParallaxLayers/Layer1/Planets" instance=ExtResource("6_nrkyk")]
-palette = ExtResource("10_0gaxt")
-texture = ExtResource("11_gk1fh")
+palette = ExtResource("8_ulbxh")
+texture = ExtResource("19_tpjre")
 
 [node name="Grid" parent="ParallaxLayers/Layer1" instance=ExtResource("17_xkpsp")]
 position = Vector2(0, 240)
