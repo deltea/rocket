@@ -44,7 +44,7 @@ func _process(delta: float) -> void:
 
 	for i in range(parallax_layers.get_child_count()):
 		var layer = parallax_layers.get_child(i)
-		layer.global_position = get_global_mouse_position() * parallax_effect * (i + 1)
+		layer.global_position = (get_global_mouse_position() - camera.position) * parallax_effect * (i + 1)
 
 	planet_selector.position = lerp(planet_selector.position, planet_selector_target, planet_selector_smoothing * delta)
 
