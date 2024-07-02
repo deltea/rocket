@@ -2,16 +2,22 @@ class_name Camera extends Camera2D
 
 @export var follow_enabled = false
 @export var follow_speed = 3.0
-@export var tilt_magnitude = 0#0.006
+@export var player_strength = 0.1
+@export var tilt_magnitude = 0#0.01
 @export var impact_rotation = 5.0
 @export var shake_damping_speed = 1.0
 
 var shake_duration = 0.0;
 var shake_magnitude = 0.0;
 var shake_offset = Vector2.ZERO
+var player_offset = Vector2.ZERO
 
 func _enter_tree() -> void:
 	RoomManager.current_room.camera = self
+
+func _ready() -> void:
+	if RoomManager.current_room.player:
+		player_offset = RoomManager.current_room.player.global_position * player_strength
 
 func _process(delta: float) -> void:
 	if RoomManager.current_room.player:
@@ -27,7 +33,7 @@ func _process(delta: float) -> void:
 		shake_duration = 0
 		shake_offset = Vector2.ZERO
 
-	offset = shake_offset
+	offset = shake_offset + player_offset
 
 func shake(duration: float, magnitude: float):
 	shake_duration = duration
