@@ -1,7 +1,6 @@
 class_name LevelSelect extends Room
 
 @export var planet_selector_smoothing = 15.0
-@export var camera_look = 0.15
 @export var dotted_line_scene: PackedScene
 @export var parallax_effect = 0.05
 @export var star_texture: Texture2D
@@ -10,14 +9,14 @@ class_name LevelSelect extends Room
 @export var star_num = 100
 @export var camera_smoothing = 10.0
 
-@onready var planets_parent: Node = $Planets
-@onready var planet_selector: Sprite2D = $PlanetSelector
-@onready var galaxy: TileMap = $Galaxy
-@onready var star_parent: Node2D = $Stars
+@onready var parallax_layers: Node2D = $ParallaxLayers
+@onready var planets_parent: Node = $ParallaxLayers/Layer1/Planets
+@onready var planet_selector: Sprite2D = $ParallaxLayers/Layer1/PlanetSelector
+@onready var galaxy: TileMap = $ParallaxLayers/Layer3/Galaxy
+@onready var star_parent: Node2D = $ParallaxLayers/Layer2/Stars
 
 var planet_selector_target: Vector2
 var camera_target_pos = Vector2.ZERO
-var camera_pos = Vector2.ZERO
 
 func _ready() -> void:
 	camera = $Camera
@@ -38,19 +37,19 @@ func _ready() -> void:
 		dotted_line.add_point(planet.global_position)
 		dotted_line.add_point(next_planet.global_position)
 		dotted_line.z_index = -1
-		add_child(dotted_line)
+		$ParallaxLayers/Layer1.add_child(dotted_line)
 
 func _process(delta: float) -> void:
-	camera_pos = lerp(camera_pos, camera_target_pos, camera_smoothing * delta)
-	camera.global_position = camera_pos + get_global_mouse_position() * camera_look
+	camera.global_position = lerp(camera.global_position, camera_target_pos, camera_smoothing * delta)
 
-	galaxy.global_position = get_global_mouse_position() * parallax_effect
-	star_parent.global_position = get_global_mouse_position() * parallax_effect * 2
+	for i in range(parallax_layers.get_child_count()):
+		var layer = parallax_layers.get_child(i)
+		layer.global_position = get_global_mouse_position() * parallax_effect * (i + 1)
 
-	planet_selector.global_position = lerp(planet_selector.global_position, planet_selector_target, planet_selector_smoothing * delta)
+	planet_selector.position = lerp(planet_selector.position, planet_selector_target, planet_selector_smoothing * delta)
 
 func planet_selected(planet: Planet) -> void:
 	camera_target_pos = Vector2(0, 240)
 
 func planet_hovered(planet: Planet):
-	planet_selector_target = planet.global_position
+	planet_selector_target = planet.position
