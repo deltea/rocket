@@ -75,7 +75,7 @@ texture = ExtResource("11_gk1fh")
 
 [node name="Grid" parent="ParallaxLayers/Layer1" instance=ExtResource("17_xkpsp")]
 position = Vector2(0, 240)
-gap = 0.0
+gap = 40.0
 
 [node name="Level" type="Sprite2D" parent="ParallaxLayers/Layer1/Grid"]
 texture = ExtResource("18_wlxpm")
