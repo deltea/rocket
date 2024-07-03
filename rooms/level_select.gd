@@ -60,10 +60,10 @@ func level_hovered(level_tile: LevelTile):
 func level_selected(level_tile: LevelTile):
 	pass
 
-func planet_hovered(planet: Planet):
+func planet_hovered(planet: PlanetSelect):
 	planet_selector_target = planet.position
 
-func planet_selected(planet: Planet) -> void:
+func planet_selected(planet: PlanetSelect) -> void:
 	camera_target_pos = Vector2(0, 240)
 	planet_label.text = "\n[center][wave freq=3.0 connected=0 amp=75]%s[/wave]" % planet.area_resource.area_name.to_upper()
 

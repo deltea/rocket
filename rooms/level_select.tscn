@@ -6,26 +6,26 @@
 [ext_resource type="PackedScene" uid="uid://q354egvkd6xb" path="res://scenes/tilemap/tile_map.tscn" id="3_b6o70"]
 [ext_resource type="Texture2D" uid="uid://cdnunui18bx10" path="res://assets/generic/pixel.png" id="4_343v7"]
 [ext_resource type="Texture2D" uid="uid://dpodt2t43l5vk" path="res://assets/decoration/big-star.png" id="4_khq40"]
-[ext_resource type="PackedScene" uid="uid://dj8tahg8q65fl" path="res://scenes/planet/planet.tscn" id="6_nrkyk"]
+[ext_resource type="PackedScene" uid="uid://bymkkbb6xk6px" path="res://scenes/level-tile/level_tile.tscn" id="5_wt6h0"]
 [ext_resource type="PackedScene" uid="uid://bjplmnq45exjl" path="res://scenes/camera/camera.tscn" id="6_ygtsw"]
 [ext_resource type="Texture2D" uid="uid://cdlmxi2qqgsio" path="res://assets/decoration/planet-selector.png" id="7_i5qhe"]
 [ext_resource type="FontFile" uid="uid://bwoojdqwla1y0" path="res://assets/fonts/Bore Blasters 16.ttf" id="9_8qxqf"]
 [ext_resource type="Texture2D" uid="uid://dkthjn7m0gxdd" path="res://assets/decoration/level-selector.png" id="10_b7ffq"]
 [ext_resource type="Texture2D" uid="uid://oyw24r446gq6" path="res://color-palettes/silver.png" id="11_ixav7"]
+[ext_resource type="PackedScene" uid="uid://bs4lfblbg53pd" path="res://scenes/planet-select/planet_select.tscn" id="13_wvl8o"]
 [ext_resource type="Resource" uid="uid://cf58neh2ibdf1" path="res://areas/rock.tres" id="14_alx5g"]
 [ext_resource type="Resource" uid="uid://c4y6s7kwmxgh3" path="res://areas/mushroom.tres" id="15_bo27q"]
 [ext_resource type="Resource" uid="uid://ccj6v7l5yg07s" path="res://areas/fire.tres" id="15_eqkur"]
 [ext_resource type="Resource" uid="uid://b326gua226jkw" path="res://areas/forest.tres" id="17_p1ecw"]
 [ext_resource type="PackedScene" uid="uid://cmhnjeepvjian" path="res://scenes/grid/grid.tscn" id="17_xkpsp"]
 [ext_resource type="Resource" uid="uid://ccxro2qat54mf" path="res://areas/factory.tres" id="18_6a8w3"]
-[ext_resource type="PackedScene" uid="uid://i8ca8c70f43h" path="res://scenes/level-tile/level_tile.tscn" id="21_toakn"]
 
 [node name="LevelSelect" type="Node2D"]
 script = ExtResource("1_rv7uv")
 dotted_line_scene = ExtResource("2_26laj")
 star_texture = ExtResource("3_87oid")
 big_star_texture = ExtResource("4_khq40")
-level_tile_scene = ExtResource("21_toakn")
+level_tile_scene = ExtResource("5_wt6h0")
 palette = ExtResource("11_ixav7")
 metadata/_edit_vertical_guides_ = [-160.0, 160.0]
 metadata/_edit_horizontal_guides_ = [-120.0, 120.0, 360.0]
@@ -83,23 +83,24 @@ texture = ExtResource("10_b7ffq")
 
 [node name="Planets" type="Node2D" parent="ParallaxLayers/Layer3"]
 
-[node name="Planet" parent="ParallaxLayers/Layer3/Planets" instance=ExtResource("6_nrkyk")]
-position = Vector2(-88, -62)
+[node name="PlanetSelect" parent="ParallaxLayers/Layer3/Planets" instance=ExtResource("13_wvl8o")]
+position = Vector2(-89, -58)
 area_resource = ExtResource("14_alx5g")
 
-[node name="Planet2" parent="ParallaxLayers/Layer3/Planets" instance=ExtResource("6_nrkyk")]
-position = Vector2(-80, 56)
-area_resource = ExtResource("15_bo27q")
-
-[node name="Planet3" parent="ParallaxLayers/Layer3/Planets" instance=ExtResource("6_nrkyk")]
-position = Vector2(72, 52)
-area_resource = ExtResource("15_eqkur")
-
-[node name="Planet4" parent="ParallaxLayers/Layer3/Planets" instance=ExtResource("6_nrkyk")]
-position = Vector2(83, -54)
+[node name="PlanetSelect2" parent="ParallaxLayers/Layer3/Planets" instance=ExtResource("13_wvl8o")]
+position = Vector2(-82, 56)
 area_resource = ExtResource("17_p1ecw")
 
-[node name="Planet5" parent="ParallaxLayers/Layer3/Planets" instance=ExtResource("6_nrkyk")]
+[node name="PlanetSelect3" parent="ParallaxLayers/Layer3/Planets" instance=ExtResource("13_wvl8o")]
+position = Vector2(2, 3)
+area_resource = ExtResource("15_eqkur")
+
+[node name="PlanetSelect4" parent="ParallaxLayers/Layer3/Planets" instance=ExtResource("13_wvl8o")]
+position = Vector2(90, 60)
+area_resource = ExtResource("15_bo27q")
+
+[node name="PlanetSelect5" parent="ParallaxLayers/Layer3/Planets" instance=ExtResource("13_wvl8o")]
+position = Vector2(93, -58)
 area_resource = ExtResource("18_6a8w3")
 
 [node name="LevelsGrid" parent="ParallaxLayers/Layer3" instance=ExtResource("17_xkpsp")]
