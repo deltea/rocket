@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://yx1r5ejhw3p8" path="res://color-palettes/calm.png" id="1_2jadu"]
 [ext_resource type="Resource" uid="uid://dx7hs4laed2uf" path="res://rooms/levels/level_7.tres" id="1_ubcps"]
-[ext_resource type="Resource" uid="uid://do1wih7slfuvy" path="res://rooms/levels/level_2.tres" id="2_3s2yv"]
+[ext_resource type="Resource" uid="uid://do1wih7slfuvy" path="res://rooms/levels/level_stuff.tres" id="2_3s2yv"]
 [ext_resource type="Script" path="res://scripts/area_resource.gd" id="2_a7kec"]
 [ext_resource type="Texture2D" uid="uid://cafpt6ok536h2" path="res://assets/planets/mushroom.png" id="3_lyw1k"]
 

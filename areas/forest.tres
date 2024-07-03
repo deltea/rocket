@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b5l7cik55j6lo" path="res://color-palettes/forest.png" id="1_07fbo"]
 [ext_resource type="Resource" uid="uid://dx7hs4laed2uf" path="res://rooms/levels/level_7.tres" id="1_h38jo"]
-[ext_resource type="Resource" uid="uid://do1wih7slfuvy" path="res://rooms/levels/level_2.tres" id="2_u3r37"]
+[ext_resource type="Resource" uid="uid://do1wih7slfuvy" path="res://rooms/levels/level_stuff.tres" id="2_u3r37"]
 [ext_resource type="Script" path="res://scripts/area_resource.gd" id="2_vjajt"]
 [ext_resource type="Texture2D" uid="uid://do2wnkt8yjiwh" path="res://assets/planets/tree.png" id="3_xyqe8"]
 

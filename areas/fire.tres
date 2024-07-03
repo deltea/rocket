@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://rewyjfctxt7t" path="res://color-palettes/cherry.png" id="1_2nrbi"]
 [ext_resource type="Texture2D" uid="uid://dy8ev3uv4wl4k" path="res://assets/planets/saturn.png" id="1_x6e5l"]
 [ext_resource type="Script" path="res://scripts/area_resource.gd" id="2_h54j1"]
-[ext_resource type="Resource" uid="uid://do1wih7slfuvy" path="res://rooms/levels/level_2.tres" id="2_xjy5s"]
+[ext_resource type="Resource" uid="uid://do1wih7slfuvy" path="res://rooms/levels/level_stuff.tres" id="2_xjy5s"]
 
 [resource]
 script = ExtResource("2_h54j1")
