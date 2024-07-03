@@ -10,7 +10,6 @@ size = Vector2(32, 32)
 
 [sub_resource type="LabelSettings" id="LabelSettings_k8kfe"]
 font = ExtResource("4_vx4n3")
-font_color = Color(0, 0, 1, 1)
 
 [node name="LevelTile" instance=ExtResource("1_if4i5")]
 script = ExtResource("2_tgn81")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c8my6r52a3o5m"]
+[gd_scene load_steps=21 format=3 uid="uid://c8my6r52a3o5m"]
 
 [ext_resource type="Script" path="res://rooms/level_select.gd" id="1_rv7uv"]
 [ext_resource type="PackedScene" uid="uid://dqm2jcab6otjm" path="res://scenes/dotted-line/dotted_line.tscn" id="2_26laj"]
@@ -19,6 +19,7 @@
 [ext_resource type="Resource" uid="uid://b326gua226jkw" path="res://areas/forest.tres" id="17_p1ecw"]
 [ext_resource type="PackedScene" uid="uid://cmhnjeepvjian" path="res://scenes/grid/grid.tscn" id="17_xkpsp"]
 [ext_resource type="Resource" uid="uid://ccxro2qat54mf" path="res://areas/factory.tres" id="18_6a8w3"]
+[ext_resource type="Texture2D" uid="uid://b3vost3fswoed" path="res://assets/decoration/levels-grid-background.png" id="20_4hedi"]
 
 [node name="LevelSelect" type="Node2D"]
 script = ExtResource("1_rv7uv")
@@ -102,6 +103,11 @@ area_resource = ExtResource("15_bo27q")
 [node name="PlanetSelect5" parent="ParallaxLayers/Layer3/Planets" instance=ExtResource("13_wvl8o")]
 position = Vector2(93, -58)
 area_resource = ExtResource("18_6a8w3")
+
+[node name="LevelsGridBackground" type="Sprite2D" parent="ParallaxLayers/Layer3"]
+z_index = -1
+position = Vector2(-64, 263)
+texture = ExtResource("20_4hedi")
 
 [node name="LevelsGrid" parent="ParallaxLayers/Layer3" instance=ExtResource("17_xkpsp")]
 position = Vector2(-64, 263)
