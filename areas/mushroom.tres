@@ -11,4 +11,4 @@ script = ExtResource("2_a7kec")
 palette = ExtResource("1_2jadu")
 texture = ExtResource("3_lyw1k")
 area_name = "Mushroom"
-levels = Array[Resource("res://scripts/level_resource.gd")]([ExtResource("1_paies"), ExtResource("2_3s2yv"), ExtResource("1_paies"), ExtResource("2_3s2yv"), ExtResource("1_paies"), ExtResource("2_3s2yv"), ExtResource("1_paies"), ExtResource("2_3s2yv")])
+levels = Array[Resource("res://scripts/level_resource.gd")]([ExtResource("1_paies"), ExtResource("2_3s2yv"), ExtResource("1_paies"), ExtResource("2_3s2yv"), ExtResource("1_paies"), ExtResource("2_3s2yv"), ExtResource("1_paies")])

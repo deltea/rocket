@@ -20,6 +20,6 @@ func _on_mouse_entered():
 	hover.emit()
 
 func _on_mouse_exited():
-	if disabled: return
+	# if disabled: return
 	hovered = false
 	hover_out.emit()

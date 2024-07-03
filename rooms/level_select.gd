@@ -57,9 +57,10 @@ func _process(delta: float) -> void:
 
 func level_hovered(level_tile: LevelTile):
 	level_selector_target = levels_grid.position + level_tile.position
+	level_selector.self_modulate = Color.WHITE
 
 func level_selected(level_tile: LevelTile):
-	pass
+	RoomManager.change_room_from_scene(level_tile.level_resource.scene)
 
 func planet_hovered(planet: PlanetSelect):
 	planet_selector_target = planet.position
@@ -67,12 +68,13 @@ func planet_hovered(planet: PlanetSelect):
 func planet_selected(planet: PlanetSelect) -> void:
 	camera_target_pos = Vector2(0, 240)
 	planet_label.text = "\n[center][wave freq=3.0 connected=0 amp=75]%s[/wave]" % planet.area_resource.area_name.to_upper()
+	level_selector.self_modulate = Color.WHITE
 
 	for child in planets_parent.get_children():
 		child.disabled = true
 
 	for child in levels_grid.get_children():
-		child.queue_free()
+		child.free()
 
 	for i in range(len(planet.area_resource.levels)):
 		var level = planet.area_resource.levels[i]
@@ -82,3 +84,20 @@ func planet_selected(planet: PlanetSelect) -> void:
 		levels_grid.add_child(level_tile)
 
 	levels_grid.update_grid()
+	level_selector_target = levels_grid.get_child(0).position + levels_grid.position
+
+func _on_back_button_click():
+	camera_target_pos = Vector2.ZERO
+	for child in planets_parent.get_children():
+		child.disabled = false
+
+func _on_back_button_hover():
+	level_selector_target = $ParallaxLayers/Layer3/BackButton.position
+	level_selector.self_modulate = Color("#555555")
+
+func _on_play_button_click():
+	pass
+
+func _on_play_button_hover():
+	level_selector_target = $ParallaxLayers/Layer3/PlayButton.position
+	level_selector.self_modulate = Color.RED
