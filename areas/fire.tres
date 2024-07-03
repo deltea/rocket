@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="AreaResource" load_steps=6 format=3 uid="uid://ccj6v7l5yg07s"]
 
+[ext_resource type="Resource" uid="uid://dx7hs4laed2uf" path="res://rooms/levels/level_7.tres" id="1_00fhy"]
 [ext_resource type="Texture2D" uid="uid://rewyjfctxt7t" path="res://color-palettes/cherry.png" id="1_2nrbi"]
-[ext_resource type="Resource" uid="uid://dx7hs4laed2uf" path="res://rooms/levels/level_1.tres" id="1_v086u"]
 [ext_resource type="Texture2D" uid="uid://dy8ev3uv4wl4k" path="res://assets/planets/saturn.png" id="1_x6e5l"]
 [ext_resource type="Script" path="res://scripts/area_resource.gd" id="2_h54j1"]
 [ext_resource type="Resource" uid="uid://do1wih7slfuvy" path="res://rooms/levels/level_2.tres" id="2_xjy5s"]
@@ -10,5 +10,5 @@
 script = ExtResource("2_h54j1")
 palette = ExtResource("1_2nrbi")
 texture = ExtResource("1_x6e5l")
-area_name = "Fire"
-levels = Array[Resource("res://scripts/level_resource.gd")]([ExtResource("1_v086u"), ExtResource("2_xjy5s"), ExtResource("1_v086u"), ExtResource("2_xjy5s"), ExtResource("1_v086u"), ExtResource("2_xjy5s"), ExtResource("1_v086u"), ExtResource("2_xjy5s")])
+area_name = "The Fire"
+levels = Array[Resource("res://scripts/level_resource.gd")]([ExtResource("1_00fhy"), ExtResource("2_xjy5s"), ExtResource("1_00fhy"), ExtResource("2_xjy5s"), ExtResource("1_00fhy"), ExtResource("2_xjy5s"), ExtResource("1_00fhy"), ExtResource("2_xjy5s")])
