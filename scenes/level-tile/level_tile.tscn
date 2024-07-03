@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://bymkkbb6xk6px"]
+[gd_scene load_steps=7 format=3 uid="uid://bymkkbb6xk6px"]
 
 [ext_resource type="PackedScene" uid="uid://ctjqde01etycg" path="res://scenes/clickable/clickable.tscn" id="1_if4i5"]
 [ext_resource type="Script" path="res://scenes/level-tile/level_tile.gd" id="2_tgn81"]
-[ext_resource type="Texture2D" uid="uid://bf64i3lpsk4fb" path="res://assets/decoration/level.png" id="3_pdso1"]
+[ext_resource type="Texture2D" uid="uid://bf64i3lpsk4fb" path="res://assets/decoration/level-tile.png" id="3_pdso1"]
+[ext_resource type="FontFile" uid="uid://b216xmkr2umx7" path="res://assets/fonts/hefty-me.ttf" id="4_vx4n3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l452k"]
 size = Vector2(32, 32)
+
+[sub_resource type="LabelSettings" id="LabelSettings_k8kfe"]
+font = ExtResource("4_vx4n3")
+font_color = Color(0, 0, 1, 1)
 
 [node name="LevelTile" instance=ExtResource("1_if4i5")]
 script = ExtResource("2_tgn81")
@@ -15,6 +20,16 @@ texture = ExtResource("3_pdso1")
 
 [node name="CollisionShape" parent="." index="1"]
 shape = SubResource("RectangleShape2D_l452k")
+
+[node name="NumLabel" type="Label" parent="." index="2"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+text = "1"
+label_settings = SubResource("LabelSettings_k8kfe")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="click" from="." to="." method="_on_click"]
 [connection signal="hover" from="." to="." method="_on_hover"]

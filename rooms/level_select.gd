@@ -26,6 +26,7 @@ var camera_target_pos = Vector2.ZERO
 func _ready() -> void:
 	camera = $Camera
 	planet_selector_target = planets_parent.get_child(0).global_position
+	level_selector_target = levels_grid.position
 
 	for i in range(star_num):
 		var star = Sprite2D.new()
@@ -55,7 +56,7 @@ func _process(delta: float) -> void:
 	level_selector.position = lerp(level_selector.position, level_selector_target, selector_smoothing * delta)
 
 func level_hovered(level_tile: LevelTile):
-	level_selector_target = level_tile.position
+	level_selector_target = levels_grid.position + level_tile.position
 
 func level_selected(level_tile: LevelTile):
 	pass
@@ -67,11 +68,17 @@ func planet_selected(planet: PlanetSelect) -> void:
 	camera_target_pos = Vector2(0, 240)
 	planet_label.text = "\n[center][wave freq=3.0 connected=0 amp=75]%s[/wave]" % planet.area_resource.area_name.to_upper()
 
+	for child in planets_parent.get_children():
+		child.disabled = true
+
 	for child in levels_grid.get_children():
 		child.queue_free()
 
-	for level in planet.area_resource.levels:
+	for i in range(len(planet.area_resource.levels)):
+		var level = planet.area_resource.levels[i]
 		var level_tile = level_tile_scene.instantiate() as LevelTile
+		level_tile.level_num = i + 1
 		level_tile.level_resource = level
 		levels_grid.add_child(level_tile)
+
 	levels_grid.update_grid()

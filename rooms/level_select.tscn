@@ -104,5 +104,5 @@ position = Vector2(93, -58)
 area_resource = ExtResource("18_6a8w3")
 
 [node name="LevelsGrid" parent="ParallaxLayers/Layer3" instance=ExtResource("17_xkpsp")]
-position = Vector2(0, 263)
-gap = 40.0
+position = Vector2(-64, 263)
+gap = 36.0
