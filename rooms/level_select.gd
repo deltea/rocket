@@ -1,6 +1,6 @@
 class_name LevelSelect extends Room
 
-@export var planet_selector_smoothing = 15.0
+@export var selector_smoothing = 15.0
 @export var dotted_line_scene: PackedScene
 @export var parallax_effect = 0.05
 @export var star_texture: Texture2D
@@ -12,15 +12,19 @@ class_name LevelSelect extends Room
 @onready var parallax_layers: Node2D = $ParallaxLayers
 @onready var planets_parent: Node = $ParallaxLayers/Layer1/Planets
 @onready var planet_selector: Sprite2D = $ParallaxLayers/Layer1/PlanetSelector
+@onready var level_selector: Sprite2D = $ParallaxLayers/Layer1/LevelSelector
 @onready var galaxy: TileMap = $ParallaxLayers/Layer3/Galaxy
 @onready var star_parent: Node2D = $ParallaxLayers/Layer2/Stars
+@onready var levels_grid: Grid = $ParallaxLayers/Layer1/LevelsGrid
 
 var planet_selector_target: Vector2
+var level_selector_target: Vector2
 var camera_target_pos = Vector2.ZERO
 
 func _ready() -> void:
 	camera = $Camera
 	planet_selector_target = planets_parent.get_child(0).global_position
+	level_selector_target = levels_grid.get_child(0).global_position
 
 	for i in range(star_num):
 		var star = Sprite2D.new()
@@ -46,10 +50,18 @@ func _process(delta: float) -> void:
 		var layer = parallax_layers.get_child(i)
 		layer.global_position = (get_global_mouse_position() - camera.position) * parallax_effect * (i + 1)
 
-	planet_selector.position = lerp(planet_selector.position, planet_selector_target, planet_selector_smoothing * delta)
+	planet_selector.position = lerp(planet_selector.position, planet_selector_target, selector_smoothing * delta)
+	level_selector.position = lerp(level_selector.position, level_selector_target, selector_smoothing * delta)
+
+func level_hovered(level_tile: LevelTile):
+	level_selector_target = level_tile.global_position
+
+func level_selected(level_tile: LevelTile):
+	pass
+
+func planet_hovered(planet: Planet):
+	planet_selector_target = planet.position
 
 func planet_selected(planet: Planet) -> void:
 	camera_target_pos = Vector2(0, 240)
 
-func planet_hovered(planet: Planet):
-	planet_selector_target = planet.position

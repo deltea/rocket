@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c8my6r52a3o5m"]
+[gd_scene load_steps=23 format=3 uid="uid://c8my6r52a3o5m"]
 
 [ext_resource type="Script" path="res://rooms/level_select.gd" id="1_rv7uv"]
 [ext_resource type="PackedScene" uid="uid://dqm2jcab6otjm" path="res://scenes/dotted-line/dotted_line.tscn" id="2_26laj"]
@@ -14,13 +14,14 @@
 [ext_resource type="Texture2D" uid="uid://b1md2qk2y5pga" path="res://color-palettes/electric.png" id="8_ulbxh"]
 [ext_resource type="Texture2D" uid="uid://b5l7cik55j6lo" path="res://color-palettes/forest.png" id="9_sl37e"]
 [ext_resource type="Texture2D" uid="uid://dy8ev3uv4wl4k" path="res://assets/planets/saturn.png" id="9_uddeu"]
+[ext_resource type="Texture2D" uid="uid://dkthjn7m0gxdd" path="res://assets/level-selector.png" id="10_b7ffq"]
 [ext_resource type="Texture2D" uid="uid://cafpt6ok536h2" path="res://assets/planets/mushroom.png" id="11_gk1fh"]
 [ext_resource type="Texture2D" uid="uid://oyw24r446gq6" path="res://color-palettes/silver.png" id="11_ixav7"]
 [ext_resource type="Texture2D" uid="uid://oelthmh8heei" path="res://color-palettes/spicy.png" id="13_e3sb7"]
 [ext_resource type="PackedScene" uid="uid://cmhnjeepvjian" path="res://scenes/grid/grid.tscn" id="17_xkpsp"]
 [ext_resource type="Texture2D" uid="uid://do2wnkt8yjiwh" path="res://assets/planets/tree.png" id="17_xmepw"]
-[ext_resource type="Texture2D" uid="uid://bf64i3lpsk4fb" path="res://assets/level.png" id="18_wlxpm"]
 [ext_resource type="Texture2D" uid="uid://ce0bwwb828l6s" path="res://assets/planets/factory.png" id="19_tpjre"]
+[ext_resource type="PackedScene" uid="uid://i8ca8c70f43h" path="res://scenes/level-tile/level_tile.tscn" id="21_toakn"]
 
 [node name="LevelSelect" type="Node2D"]
 script = ExtResource("1_rv7uv")
@@ -34,7 +35,10 @@ metadata/_edit_horizontal_guides_ = [-120.0, 120.0, 360.0]
 [node name="Camera" parent="." instance=ExtResource("6_ygtsw")]
 
 [node name="Overlay" parent="Camera" instance=ExtResource("3_b6o70")]
+layer_0/z_index = 2
 layer_0/tile_data = PackedInt32Array(-458762, 65539, 0, -393226, 65539, 0, -327690, 65539, 0, -262154, 65539, 0, -196618, 65539, 0, -131082, 65539, 0, -65546, 65539, 0, -10, 65539, 0, 65526, 65539, 0, 131062, 65539, 0, 196598, 65539, 0, 262134, 65539, 0, 327670, 65539, 0, -458761, 65539, 0, -524280, 65539, 0, -524279, 65539, 0, -458743, 65539, 0, -393207, 65539, 0, -327671, 65539, 0, -262135, 65539, 0, -196599, 65539, 0, -131063, 65539, 0, -65527, 65539, 0, 9, 65539, 0, 65545, 65539, 0, 131081, 65539, 0, 196617, 65539, 0, 262153, 65539, 0, -458760, 65539, 0, -458759, 65539, 0, -458758, 65539, 0, -458757, 65539, 0, -458756, 65539, 0, -458755, 65539, 0, -458754, 65539, 0, -458753, 65539, 0, -524288, 65539, 0, -524287, 65539, 0, -524286, 65539, 0, -524285, 65539, 0, -524284, 65539, 0, -524283, 65539, 0, -524282, 65539, 0, -524281, 65539, 0, 393206, 65539, 0, 327689, 65539, 0, 458742, 65539, 0, 458743, 65539, 0, 458744, 65539, 0, 458745, 65539, 0, 458746, 65539, 0, 458747, 65539, 0, 458748, 65539, 0, 458749, 65539, 0, 458750, 65539, 0, 458751, 65539, 0, 393216, 65539, 0, 393217, 65539, 0, 393218, 65539, 0, 393219, 65539, 0, 393220, 65539, 0, 393221, 65539, 0, 393222, 65539, 0, 393223, 65539, 0, 393224, 65539, 0, 393225, 65539, 0, -393225, 3, 1, -458744, 3, 1, 393207, 3, 1, 327688, 3, 1, 327687, 524291, 0, 393208, 589827, 0, 327671, 589827, 0, -393208, 524291, 1, -458745, 524291, 1, -393224, 589827, 1, 393215, 327683, 0, 327680, 327683, 0, -393217, 262147, 1, -458752, 262147, 1, 393214, 524291, 4, 327681, 589827, 4, -393218, 524291, 5, -458751, 589827, 5, -9, 327683, 1, -65545, 589827, 4, 65527, 589827, 5, -65528, 262147, 0, -327689, 589827, 1, 262152, 524291, 0, -131064, 524291, 4, 8, 524291, 5)
+layer_1/z_index = 1
+layer_1/tile_data = PackedInt32Array(-393225, 65537, 0, -458744, 65537, 0, 327688, 65537, 0, 393207, 65537, 0)
 
 [node name="Background" type="Sprite2D" parent="Camera"]
 self_modulate = Color(0.266667, 0.266667, 0.266667, 1)
@@ -48,6 +52,9 @@ texture = ExtResource("4_343v7")
 
 [node name="PlanetSelector" type="Sprite2D" parent="ParallaxLayers/Layer1"]
 texture = ExtResource("7_i5qhe")
+
+[node name="LevelSelector" type="Sprite2D" parent="ParallaxLayers/Layer1"]
+texture = ExtResource("10_b7ffq")
 
 [node name="Planets" type="Node2D" parent="ParallaxLayers/Layer1"]
 
@@ -75,36 +82,27 @@ texture = ExtResource("17_xmepw")
 palette = ExtResource("8_ulbxh")
 texture = ExtResource("19_tpjre")
 
-[node name="Grid" parent="ParallaxLayers/Layer1" instance=ExtResource("17_xkpsp")]
-position = Vector2(0, 240)
+[node name="LevelsGrid" parent="ParallaxLayers/Layer1" instance=ExtResource("17_xkpsp")]
+position = Vector2(0, 273)
 gap = 40.0
 
-[node name="Level" type="Sprite2D" parent="ParallaxLayers/Layer1/Grid"]
-texture = ExtResource("18_wlxpm")
+[node name="LevelTile" parent="ParallaxLayers/Layer1/LevelsGrid" instance=ExtResource("21_toakn")]
 
-[node name="Level2" type="Sprite2D" parent="ParallaxLayers/Layer1/Grid"]
-texture = ExtResource("18_wlxpm")
+[node name="LevelTile2" parent="ParallaxLayers/Layer1/LevelsGrid" instance=ExtResource("21_toakn")]
 
-[node name="Level3" type="Sprite2D" parent="ParallaxLayers/Layer1/Grid"]
-texture = ExtResource("18_wlxpm")
+[node name="LevelTile3" parent="ParallaxLayers/Layer1/LevelsGrid" instance=ExtResource("21_toakn")]
 
-[node name="Level4" type="Sprite2D" parent="ParallaxLayers/Layer1/Grid"]
-texture = ExtResource("18_wlxpm")
+[node name="LevelTile4" parent="ParallaxLayers/Layer1/LevelsGrid" instance=ExtResource("21_toakn")]
 
-[node name="Level5" type="Sprite2D" parent="ParallaxLayers/Layer1/Grid"]
-texture = ExtResource("18_wlxpm")
+[node name="LevelTile5" parent="ParallaxLayers/Layer1/LevelsGrid" instance=ExtResource("21_toakn")]
 
-[node name="Level6" type="Sprite2D" parent="ParallaxLayers/Layer1/Grid"]
-texture = ExtResource("18_wlxpm")
+[node name="LevelTile6" parent="ParallaxLayers/Layer1/LevelsGrid" instance=ExtResource("21_toakn")]
 
-[node name="Level7" type="Sprite2D" parent="ParallaxLayers/Layer1/Grid"]
-texture = ExtResource("18_wlxpm")
+[node name="LevelTile7" parent="ParallaxLayers/Layer1/LevelsGrid" instance=ExtResource("21_toakn")]
 
-[node name="Level8" type="Sprite2D" parent="ParallaxLayers/Layer1/Grid"]
-texture = ExtResource("18_wlxpm")
+[node name="LevelTile8" parent="ParallaxLayers/Layer1/LevelsGrid" instance=ExtResource("21_toakn")]
 
-[node name="Level9" type="Sprite2D" parent="ParallaxLayers/Layer1/Grid"]
-texture = ExtResource("18_wlxpm")
+[node name="LevelTile9" parent="ParallaxLayers/Layer1/LevelsGrid" instance=ExtResource("21_toakn")]
 
 [node name="Layer2" type="Node2D" parent="ParallaxLayers"]
 
