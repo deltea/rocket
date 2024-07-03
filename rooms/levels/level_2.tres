@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=3 format=3 uid="uid://do1wih7slfuvy"]
+
+[ext_resource type="PackedScene" uid="uid://dhcstotaj8tnb" path="res://rooms/levels/level_2.tscn" id="1_ruo3j"]
+[ext_resource type="Script" path="res://scripts/level_resource.gd" id="2_4mkfj"]
+
+[resource]
+script = ExtResource("2_4mkfj")
+level_name = "Babushka"
+scene = ExtResource("1_ruo3j")

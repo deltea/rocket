@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7qxx5s8olujr"
-path="res://.godot/imported/pad.png-b652122d924bf1be191ea5ecd5cbb164.ctex"
+path="res://.godot/imported/pad.png-9ad081a2c535d14cf84bf46c1ed14cb8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pad.png"
-dest_files=["res://.godot/imported/pad.png-b652122d924bf1be191ea5ecd5cbb164.ctex"]
+source_file="res://assets/gameplay/pad.png"
+dest_files=["res://.godot/imported/pad.png-9ad081a2c535d14cf84bf46c1ed14cb8.ctex"]
 
 [params]
 

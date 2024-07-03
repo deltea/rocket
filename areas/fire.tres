@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AreaResource" load_steps=4 format=3 uid="uid://ccj6v7l5yg07s"]
+
+[ext_resource type="Texture2D" uid="uid://rewyjfctxt7t" path="res://color-palettes/cherry.png" id="1_2nrbi"]
+[ext_resource type="Texture2D" uid="uid://dy8ev3uv4wl4k" path="res://assets/planets/saturn.png" id="1_x6e5l"]
+[ext_resource type="Script" path="res://scripts/area_resource.gd" id="2_h54j1"]
+
+[resource]
+script = ExtResource("2_h54j1")
+palette = ExtResource("1_2nrbi")
+texture = ExtResource("1_x6e5l")
+area_name = "Fire"

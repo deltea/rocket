@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dtn084ggq5j4t"]
 
 [ext_resource type="Script" path="res://autoloads/room_manager.gd" id="1_ek3bw"]
-[ext_resource type="Texture2D" uid="uid://ch3vgkov0bmcg" path="res://assets/screen-transition.png" id="2_geu1e"]
+[ext_resource type="Texture2D" uid="uid://ch3vgkov0bmcg" path="res://assets/decoration/screen-transition.png" id="2_geu1e"]
 
 [sub_resource type="Animation" id="Animation_lfxxf"]
 resource_name = "transition"

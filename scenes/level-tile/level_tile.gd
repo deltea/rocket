@@ -1,5 +1,6 @@
 class_name LevelTile extends Area2D
 
+var level_resource: LevelResource
 var hovered = false
 
 func _process(delta: float) -> void:

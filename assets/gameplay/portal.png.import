@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce8q1n0j8j4pg"
-path="res://.godot/imported/rocket-pieces.png-fbffe861a6a2b14278ef40681b46385a.ctex"
+uid="uid://dfjn1qkkcndvi"
+path="res://.godot/imported/portal.png-cc34ad53733689d6223b74ed8825fa48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/rocket-pieces.png"
-dest_files=["res://.godot/imported/rocket-pieces.png-fbffe861a6a2b14278ef40681b46385a.ctex"]
+source_file="res://assets/gameplay/portal.png"
+dest_files=["res://.godot/imported/portal.png-cc34ad53733689d6223b74ed8825fa48.ctex"]
 
 [params]
 

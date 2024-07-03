@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AreaResource" load_steps=4 format=3 uid="uid://ccxro2qat54mf"]
+
+[ext_resource type="Texture2D" uid="uid://ce0bwwb828l6s" path="res://assets/planets/factory.png" id="1_qa72p"]
+[ext_resource type="Texture2D" uid="uid://b1md2qk2y5pga" path="res://color-palettes/electric.png" id="1_yf61h"]
+[ext_resource type="Script" path="res://scripts/area_resource.gd" id="2_0jqtn"]
+
+[resource]
+script = ExtResource("2_0jqtn")
+palette = ExtResource("1_yf61h")
+texture = ExtResource("1_qa72p")
+area_name = "Factory"

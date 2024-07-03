@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdlmxi2qqgsio"
-path="res://.godot/imported/planet-selector.png-4824d429ad6aa43a7816a9f3a72796ff.ctex"
+uid="uid://wfxkklmdhcvh"
+path="res://.godot/imported/star.png-1677bf9808e3821c0b8aea01b5d0b70c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/planet-selector.png"
-dest_files=["res://.godot/imported/planet-selector.png-4824d429ad6aa43a7816a9f3a72796ff.ctex"]
+source_file="res://assets/decoration/star.png"
+dest_files=["res://.godot/imported/star.png-1677bf9808e3821c0b8aea01b5d0b70c.ctex"]
 
 [params]
 

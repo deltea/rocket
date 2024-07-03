@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://i8ca8c70f43h"]
 
 [ext_resource type="Script" path="res://scenes/level-tile/level_tile.gd" id="1_b2ttv"]
-[ext_resource type="Texture2D" uid="uid://bf64i3lpsk4fb" path="res://assets/level.png" id="2_wkn2l"]
+[ext_resource type="Texture2D" uid="uid://bf64i3lpsk4fb" path="res://assets/decoration/level.png" id="2_wkn2l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8sc4u"]
 size = Vector2(40, 40)

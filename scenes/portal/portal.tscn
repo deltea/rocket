@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/portal/portal.gd" id="1_oqy8s"]
 [ext_resource type="Texture2D" uid="uid://c8vebnkhtxxr6" path="res://assets/generic/circle.png" id="2_0fntu"]
-[ext_resource type="Texture2D" uid="uid://dfjn1qkkcndvi" path="res://assets/portal.png" id="2_wwtiq"]
+[ext_resource type="Texture2D" uid="uid://dfjn1qkkcndvi" path="res://assets/gameplay/portal.png" id="2_wwtiq"]
 
 [sub_resource type="Curve" id="Curve_f4d4r"]
 _data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]

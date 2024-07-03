@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr8wkx08oxeik"
-path="res://.godot/imported/spikeball.png-eda2aae7a7cac1300e2f1f3b394781bd.ctex"
+uid="uid://cdlmxi2qqgsio"
+path="res://.godot/imported/planet-selector.png-7b0aacc49505c48d2e80dc02b573bed5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spikeball.png"
-dest_files=["res://.godot/imported/spikeball.png-eda2aae7a7cac1300e2f1f3b394781bd.ctex"]
+source_file="res://assets/decoration/planet-selector.png"
+dest_files=["res://.godot/imported/planet-selector.png-7b0aacc49505c48d2e80dc02b573bed5.ctex"]
 
 [params]
 

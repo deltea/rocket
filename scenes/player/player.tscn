@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://ddanmgaltueiq"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_8e7y8"]
-[ext_resource type="Texture2D" uid="uid://c7jdim0ct1cid" path="res://assets/player.png" id="2_8ka1b"]
+[ext_resource type="Texture2D" uid="uid://c7jdim0ct1cid" path="res://assets/gameplay/player.png" id="2_8ka1b"]
 [ext_resource type="PackedScene" uid="uid://d1betdwyodmp2" path="res://scenes/rocket-pieces/rocket_pieces.tscn" id="2_uvvah"]
 [ext_resource type="Texture2D" uid="uid://bxtc5illu43wy" path="res://assets/generic/circle-big.png" id="3_o3pd5"]
 

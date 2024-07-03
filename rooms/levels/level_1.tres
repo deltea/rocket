@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=3 format=3 uid="uid://dx7hs4laed2uf"]
+
+[ext_resource type="PackedScene" uid="uid://fsob3bcwgghl" path="res://rooms/levels/level_1.tscn" id="1_8r8tv"]
+[ext_resource type="Script" path="res://scripts/level_resource.gd" id="1_bgcpf"]
+
+[resource]
+script = ExtResource("1_bgcpf")
+level_name = "The Fall"
+scene = ExtResource("1_8r8tv")

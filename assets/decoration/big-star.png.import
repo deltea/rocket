@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfjn1qkkcndvi"
-path="res://.godot/imported/portal.png-aead05909ff805293aa08d3705b32f3c.ctex"
+uid="uid://dpodt2t43l5vk"
+path="res://.godot/imported/big-star.png-9784213f8f2bf13d534c47db757c31d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/portal.png"
-dest_files=["res://.godot/imported/portal.png-aead05909ff805293aa08d3705b32f3c.ctex"]
+source_file="res://assets/decoration/big-star.png"
+dest_files=["res://.godot/imported/big-star.png-9784213f8f2bf13d534c47db757c31d8.ctex"]
 
 [params]
 

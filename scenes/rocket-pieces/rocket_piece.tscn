@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://4he04y548wrt"]
 
 [ext_resource type="Script" path="res://scenes/rocket-pieces/rocket_piece.gd" id="1_ee70m"]
-[ext_resource type="Texture2D" uid="uid://ce8q1n0j8j4pg" path="res://assets/rocket-pieces.png" id="1_jlpur"]
+[ext_resource type="Texture2D" uid="uid://ce8q1n0j8j4pg" path="res://assets/decoration/rocket-pieces.png" id="1_jlpur"]
 
 [node name="RocketPiece" type="RigidBody2D"]
 z_index = -1

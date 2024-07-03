@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://osoqlhrnqa8"]
 
 [ext_resource type="Script" path="res://scenes/pad/pad.gd" id="1_py5lm"]
-[ext_resource type="Texture2D" uid="uid://c7qxx5s8olujr" path="res://assets/pad.png" id="1_u6khq"]
+[ext_resource type="Texture2D" uid="uid://c7qxx5s8olujr" path="res://assets/gameplay/pad.png" id="1_u6khq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6hqv"]
 size = Vector2(28, 2)

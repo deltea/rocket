@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wi2jw0nda3uj"
-path="res://.godot/imported/dotted-line.png-78a01c5c9c8c11589f1b5fe8e79ea241.ctex"
+uid="uid://t80dgkja51kq"
+path="res://.godot/imported/key.png-cfdfdd5d038f592be8f0c5072aa8cc03.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dotted-line.png"
-dest_files=["res://.godot/imported/dotted-line.png-78a01c5c9c8c11589f1b5fe8e79ea241.ctex"]
+source_file="res://assets/gameplay/key.png"
+dest_files=["res://.godot/imported/key.png-cfdfdd5d038f592be8f0c5072aa8cc03.ctex"]
 
 [params]
 

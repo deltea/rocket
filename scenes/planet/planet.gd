@@ -1,8 +1,6 @@
 class_name Planet extends Area2D
 
-@export var palette: Texture2D
-@export var texture: Texture2D
-@export var area_name = "Planet"
+@export var area_resource: AreaResource
 @export var spin_speed = 0.25
 
 @onready var sprite: Sprite2D = $Sprite
@@ -10,7 +8,7 @@ class_name Planet extends Area2D
 var hovered = false
 
 func _ready() -> void:
-	sprite.texture = texture
+	sprite.texture = area_resource.texture
 	rotation_degrees = randf_range(0, 360)
 
 func _process(delta: float) -> void:
@@ -20,11 +18,11 @@ func _process(delta: float) -> void:
 		RoomManager.current_room.planet_selected(self)
 
 func _on_mouse_entered():
-	PaletteFilter.set_color_palette(palette)
+	PaletteFilter.set_color_palette(area_resource.palette)
 	RoomManager.current_room.planet_hovered(self)
-	print("Mouse entered ", area_name)
+	print("Mouse entered ", area_resource.area_name)
 	hovered = true
 
 func _on_mouse_exited():
-	print("Mouse exited ", area_name)
+	print("Mouse exited ", area_resource.area_name)
 	hovered = false
