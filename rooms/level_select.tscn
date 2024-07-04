@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c8my6r52a3o5m"]
+[gd_scene load_steps=26 format=3 uid="uid://c8my6r52a3o5m"]
 
 [ext_resource type="Script" path="res://rooms/level_select.gd" id="1_rv7uv"]
 [ext_resource type="PackedScene" uid="uid://dqm2jcab6otjm" path="res://scenes/dotted-line/dotted_line.tscn" id="2_26laj"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cdlmxi2qqgsio" path="res://assets/decoration/planet-selector.png" id="7_i5qhe"]
 [ext_resource type="FontFile" uid="uid://bwoojdqwla1y0" path="res://assets/fonts/Bore Blasters 16.ttf" id="9_8qxqf"]
 [ext_resource type="Texture2D" uid="uid://dkthjn7m0gxdd" path="res://assets/decoration/level-selector.png" id="10_b7ffq"]
+[ext_resource type="FontFile" uid="uid://b216xmkr2umx7" path="res://assets/fonts/hefty-me.ttf" id="11_8hi84"]
 [ext_resource type="Texture2D" uid="uid://oyw24r446gq6" path="res://color-palettes/silver.png" id="11_ixav7"]
 [ext_resource type="PackedScene" uid="uid://bs4lfblbg53pd" path="res://scenes/planet-select/planet_select.tscn" id="13_wvl8o"]
 [ext_resource type="Resource" uid="uid://cf58neh2ibdf1" path="res://areas/rock.tres" id="14_alx5g"]
@@ -63,9 +64,9 @@ layer_1/tile_data = PackedInt32Array(-327689, 65537, 0, -262153, 65537, 0, -1966
 
 [node name="PlanetLabel" type="RichTextLabel" parent="ParallaxLayers/Layer2"]
 offset_left = -160.0
-offset_top = 153.0
+offset_top = 149.0
 offset_right = 160.0
-offset_bottom = 203.0
+offset_bottom = 185.0
 theme_override_colors/font_shadow_color = Color(0.333333, 0.333333, 0.333333, 1)
 theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
@@ -75,10 +76,19 @@ theme_override_fonts/normal_font = ExtResource("9_8qxqf")
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[center][wave freq=3.0 connected=0 amp=75]THE PLANET[/wave]"
+[center][wave freq=3.0 amp=50]THE PLANET[/wave]"
 
 [node name="Stars" type="Node2D" parent="ParallaxLayers/Layer2"]
 z_index = -2
+
+[node name="LevelLabel" type="RichTextLabel" parent="ParallaxLayers/Layer2"]
+offset_left = -160.0
+offset_top = 191.0
+offset_right = 160.0
+offset_bottom = 207.0
+theme_override_fonts/normal_font = ExtResource("11_8hi84")
+bbcode_enabled = true
+text = "[center]level jiowjfwiojfweioj[/center]"
 
 [node name="Layer3" type="Node2D" parent="ParallaxLayers"]
 

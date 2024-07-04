@@ -18,6 +18,7 @@ class_name LevelSelect extends Room
 @onready var star_parent: Node2D = $ParallaxLayers/Layer2/Stars
 @onready var levels_grid: Grid = $ParallaxLayers/Layer3/LevelsGrid
 @onready var planet_label: RichTextLabel = $ParallaxLayers/Layer2/PlanetLabel
+@onready var level_label: RichTextLabel = $ParallaxLayers/Layer2/LevelLabel
 
 var planet_selector_target: Vector2
 var level_selector_target: Vector2
@@ -58,6 +59,7 @@ func _process(delta: float) -> void:
 func level_hovered(level_tile: LevelTile):
 	level_selector_target = levels_grid.position + level_tile.position
 	level_selector.self_modulate = Color.WHITE
+	level_label.text = "[center]%s[/center]" % level_tile.level_resource.level_name.to_lower()
 
 func level_selected(level_tile: LevelTile):
 	RoomManager.change_room_from_scene(level_tile.level_resource.scene)
@@ -67,7 +69,7 @@ func planet_hovered(planet: PlanetSelect):
 
 func planet_selected(planet: PlanetSelect) -> void:
 	camera_target_pos = Vector2(0, 240)
-	planet_label.text = "\n[center][wave freq=3.0 connected=0 amp=75]%s[/wave]" % planet.area_resource.area_name.to_upper()
+	planet_label.text = "\n[center][wave freq=3 amp=50]%s[/wave]" % planet.area_resource.area_name.to_upper()
 	level_selector.self_modulate = Color.WHITE
 
 	for child in planets_parent.get_children():
@@ -85,6 +87,7 @@ func planet_selected(planet: PlanetSelect) -> void:
 
 	levels_grid.update_grid()
 	level_selector_target = levels_grid.get_child(0).position + levels_grid.position
+	level_label.text = "[center]%s[/center]" % levels_grid.get_child(0).level_resource.level_name.to_lower()
 
 func _on_back_button_click():
 	camera_target_pos = Vector2.ZERO
