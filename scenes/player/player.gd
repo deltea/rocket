@@ -3,21 +3,24 @@ class_name Player extends RigidBody2D
 @export var thrust_speed = 400.0
 @export var turn_speed = 3000.0
 @export var rocket_pieces_scene: PackedScene
+@export var spawn_y_amount = 18.0
 
 @onready var thrust_particles: GPUParticles2D = $ThrustParticles
 @onready var sprite: Sprite2D = $Sprite
 @onready var collider: CollisionPolygon2D = $CollisionPolygon
 
-var can_move = true
+var can_move = false
 var torque = 0.0
-var original_pos: Vector2
+var spawn_pos: Vector2
 var is_on_pad = false
 
 func _enter_tree() -> void:
 	RoomManager.current_room.player = self
 
 func _ready() -> void:
-	original_pos = position
+	spawn_pos = position
+
+	spawn()
 
 func _physics_process(delta: float) -> void:
 	if !can_move: return
@@ -53,12 +56,26 @@ func die():
 	RoomManager.current_room.camera.shake(0.1, 2.0)
 	RoomManager.current_room.reset_dust()
 
+	spawn()
+
+func spawn():
 	gravity_scale = 1
-	PhysicsServer2D.body_set_state(
-    get_rid(),
-    PhysicsServer2D.BODY_STATE_TRANSFORM,
-    Transform2D.IDENTITY.translated(original_pos)
+	linear_velocity = Vector2.ZERO
+	angular_velocity = 0
+	rotation = 0
+	thrust_particles.emitting = false
+
+	var tween = get_tree().create_tween()
+	can_move = false
+	collider.set_deferred("disabled", true)
+	set_deferred("freeze", true)
+	tween.connect("finished", func():
+		can_move = true
+		collider.disabled = false
+		freeze = false
 	)
+	position = spawn_pos + Vector2(0, spawn_y_amount)
+	tween.tween_property(self, "position", spawn_pos, 1.0)
 
 func antigravity():
 	gravity_scale *= -1
@@ -73,6 +90,6 @@ func _on_landing_area_body_entered(body: Node2D):
 	if body is Pad:
 		is_on_pad = true
 
-func _on_landing_area_body_exited(body:Node2D):
+func _on_landing_area_body_exited(body: Node2D):
 	if body is Pad:
 		is_on_pad = false

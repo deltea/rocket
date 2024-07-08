@@ -32,7 +32,7 @@ func _ready() -> void:
 	for i in range(star_num):
 		var star = Sprite2D.new()
 		star.texture = big_star_texture if randf() < big_star_probability else star_texture
-		star.global_position = Vector2(randf_range(-160, 160), randf_range(-120, 120 + 320))
+		star.global_position = Vector2(randf_range( - 160, 160), randf_range( - 120, 120 + 320))
 		star_parent.add_child(star)
 
 	for i in range(planets_parent.get_child_count()):
