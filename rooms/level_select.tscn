@@ -85,10 +85,11 @@ z_index = -2
 offset_left = -160.0
 offset_top = 191.0
 offset_right = 160.0
-offset_bottom = 207.0
+offset_bottom = 219.0
 theme_override_fonts/normal_font = ExtResource("11_8hi84")
 bbcode_enabled = true
-text = "[center]level jiowjfwiojfweioj[/center]"
+text = "[center]level
+time: 10.24[/center]"
 
 [node name="Layer3" type="Node2D" parent="ParallaxLayers"]
 
