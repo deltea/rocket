@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ddanmgaltueiq"]
+[gd_scene load_steps=9 format=3 uid="uid://ddanmgaltueiq"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_8e7y8"]
 [ext_resource type="Texture2D" uid="uid://c7jdim0ct1cid" path="res://assets/gameplay/player.png" id="2_8ka1b"]
@@ -12,21 +12,6 @@ rough = true
 [sub_resource type="Curve" id="Curve_6uffu"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.757752, 0.490352), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_3dbl4"]
-curve = SubResource("Curve_6uffu")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vlwwk"]
-particle_flag_disable_z = true
-direction = Vector3(0, 1, 0)
-spread = 15.0
-initial_velocity_min = 50.0
-initial_velocity_max = 75.0
-gravity = Vector3(0, 0, 0)
-scale_min = 0.3
-scale_max = 0.4
-scale_curve = SubResource("CurveTexture_3dbl4")
-color = Color(0, 0, 1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xw08j"]
 size = Vector2(10, 2)
@@ -49,16 +34,21 @@ texture = ExtResource("2_8ka1b")
 [node name="CollisionPolygon" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(7, 9, 7, 5, 4, 2, 4, -4, 0, -9, -4, -4, -4, 2, -7, 5, -7, 9, -2, 5, 2, 5)
 
-[node name="ThrustParticles" type="GPUParticles2D" parent="."]
+[node name="ThrustParticles" type="CPUParticles2D" parent="."]
 z_index = -1
 position = Vector2(0, 6)
-emitting = false
 amount = 12
-process_material = SubResource("ParticleProcessMaterial_vlwwk")
-texture = ExtResource("3_o3pd5")
 lifetime = 0.5
-fixed_fps = 0
-draw_order = 0
+texture = ExtResource("3_o3pd5")
+direction = Vector2(0, 1)
+spread = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 75.0
+scale_amount_min = 0.3
+scale_amount_max = 0.4
+scale_amount_curve = SubResource("Curve_6uffu")
+color = Color(0, 0, 1, 1)
 
 [node name="LandingArea" type="Area2D" parent="."]
 position = Vector2(0, 9)
