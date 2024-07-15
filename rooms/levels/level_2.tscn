@@ -21,7 +21,7 @@ position = Vector2(48, -39)
 position = Vector2(16, 103)
 
 [node name="Dust" parent="Dusts" index="0" instance=ExtResource("3_dquul")]
-position = Vector2(80, 32)
+position = Vector2(-18, -43)
 
 [node name="Spikeblock" parent="." index="7" instance=ExtResource("4_my4fb")]
 position = Vector2(0, 24)

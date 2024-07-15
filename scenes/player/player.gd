@@ -110,6 +110,8 @@ func set_smallness(value: bool):
 	thrust_particles.scale_amount_min = 0.15 if value else 0.3
 	thrust_particles.scale_amount_max = 0.2 if value else 0.4
 	thrust_particles.lifetime = 0.25 if value else 0.5
+	mass = 0.5 if value else 1.0
+	thrust_speed = 300.0 if value else 400.0
 
 func _on_body_entered(body: Node):
 	if !can_move: return
