@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbq6oyib1umxc"]
+
+[ext_resource type="PackedScene" uid="uid://dmidwgphesmiq" path="res://scenes/spikeball/spikeball.tscn" id="1_pqdk2"]
+[ext_resource type="Texture2D" uid="uid://8xhogwbe3q6w" path="res://assets/gameplay/spikeblock.png" id="2_vusly"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jjg0p"]
+radius = 5.0
+height = 42.0
+
+[node name="Spikeblock" instance=ExtResource("1_pqdk2")]
+spin_speed = 1.0
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_vusly")
+
+[node name="CollisionShape" parent="." index="1"]
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_jjg0p")

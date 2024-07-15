@@ -27,8 +27,8 @@ func _ready() -> void:
 	spawn_pos = position
 	rocket_texture = sprite.texture
 
-	original_particle_pos = thrust_particles.global_position
-	original_landing_area_pos = landing_area.global_position
+	original_particle_pos = thrust_particles.position
+	original_landing_area_pos = landing_area.position
 
 	spawn()
 
