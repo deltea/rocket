@@ -4,21 +4,31 @@ class_name Player extends RigidBody2D
 @export var turn_speed = 3000.0
 @export var rocket_pieces_scene: PackedScene
 @export var spawn_y_amount = 18.0
+@export var small_rocket_texture: Texture2D
 
 @onready var thrust_particles: GPUParticles2D = $ThrustParticles
 @onready var sprite: Sprite2D = $Sprite
 @onready var collider: CollisionPolygon2D = $CollisionPolygon
+@onready var landing_area: Area2D = $LandingArea
 
 var can_move = false
 var torque = 0.0
 var spawn_pos: Vector2
 var is_on_pad = false
+var rocket_texture: Texture2D
+var original_particle_pos: Vector2
+var original_landing_area_pos: Vector2
+var is_small = false
 
 func _enter_tree() -> void:
 	RoomManager.current_room.player = self
 
 func _ready() -> void:
 	spawn_pos = position
+	rocket_texture = sprite.texture
+
+	original_particle_pos = thrust_particles.global_position
+	original_landing_area_pos = landing_area.global_position
 
 	spawn()
 
@@ -64,6 +74,7 @@ func spawn():
 	angular_velocity = 0
 	rotation = 0
 	thrust_particles.emitting = false
+	set_smallness(false)
 
 	var tween = get_tree().create_tween()
 	can_move = false
@@ -79,6 +90,15 @@ func spawn():
 
 func antigravity():
 	gravity_scale *= -1
+
+func set_smallness(value: bool):
+	is_small = value
+	spawn_y_amount = 0.0 if value else 18.0
+	collider.scale = Vector2(0.5, 0.5) if value else Vector2.ONE
+	landing_area.scale = Vector2(0.5, 2.0) if value else Vector2.ONE
+	sprite.texture = small_rocket_texture if value else rocket_texture
+	thrust_particles.position.y = original_particle_pos.y / 2 if value else original_particle_pos.y
+	landing_area.position.y = original_landing_area_pos.y / 2 if value else original_landing_area_pos.y
 
 func _on_body_entered(body: Node):
 	if !can_move: return

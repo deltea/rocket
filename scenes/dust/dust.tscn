@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://myhvdulnh4h1"]
+[gd_scene load_steps=6 format=3 uid="uid://myhvdulnh4h1"]
 
 [ext_resource type="Script" path="res://scenes/dust/dust.gd" id="1_u8ssa"]
 [ext_resource type="Texture2D" uid="uid://clq2yolvoevh7" path="res://assets/dust/dust.png" id="2_2fsb0"]
 [ext_resource type="Texture2D" uid="uid://dq625dur1tfgx" path="res://assets/dust/antigravity.png" id="2_col50"]
+[ext_resource type="Texture2D" uid="uid://dvls37qtvd0hs" path="res://assets/dust/small.png" id="3_3dms8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5o7u4"]
 
@@ -10,6 +11,7 @@
 collision_mask = 2
 script = ExtResource("1_u8ssa")
 antigravity_texture = ExtResource("2_col50")
+small_texture = ExtResource("3_3dms8")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_2fsb0")

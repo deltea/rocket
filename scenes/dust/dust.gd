@@ -1,6 +1,6 @@
 class_name Dust extends Area2D
 
-enum DUST_TYPE { BASIC, ANTIGRAVITY }
+enum DUST_TYPE { BASIC, ANTIGRAVITY, SMALL }
 
 @export var hover_speed = 3.0
 @export var hover_magnitude = 2.0
@@ -8,6 +8,7 @@ enum DUST_TYPE { BASIC, ANTIGRAVITY }
 @export var dust_type: DUST_TYPE = DUST_TYPE.BASIC
 
 @export var antigravity_texture: Texture2D
+@export var small_texture: Texture2D
 
 @onready var sprite: Sprite2D = $Sprite
 @onready var collider: CollisionShape2D = $CollisionShape
@@ -23,6 +24,8 @@ func _ready() -> void:
 			pass
 		DUST_TYPE.ANTIGRAVITY:
 			sprite.texture = antigravity_texture
+		DUST_TYPE.SMALL:
+			sprite.texture = small_texture
 
 func _process(delta: float) -> void:
 	position.y = original_pos.y + (sin(Clock.time * hover_speed) * hover_magnitude)
@@ -49,3 +52,5 @@ func _on_body_entered(body: Node2D):
 				pass
 			DUST_TYPE.ANTIGRAVITY:
 				RoomManager.current_room.player.antigravity()
+			DUST_TYPE.SMALL:
+				RoomManager.current_room.player.set_smallness(true)
