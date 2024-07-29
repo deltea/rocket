@@ -1,16 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhjgvw4r652uj"]
+[gd_scene load_steps=5 format=3 uid="uid://hkdpuf06crg8"]
 
-[ext_resource type="Script" path="res://scenes/key/key.gd" id="1_5xpy4"]
-[ext_resource type="Texture2D" uid="uid://t80dgkja51kq" path="res://assets/gameplay/key.png" id="2_g4xnc"]
+[ext_resource type="PackedScene" uid="uid://d4aq2ex8ypkjg" path="res://scenes/collectable/collectable.tscn" id="1_8ihno"]
+[ext_resource type="Script" path="res://scenes/key/key.gd" id="2_i5vut"]
+[ext_resource type="Texture2D" uid="uid://t80dgkja51kq" path="res://assets/gameplay/key.png" id="3_xkyer"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dwjxl"]
-radius = 9.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_u3b8v"]
+radius = 12.1655
 
-[node name="Key" type="Area2D"]
-script = ExtResource("1_5xpy4")
+[node name="Key" instance=ExtResource("1_8ihno")]
+script = ExtResource("2_i5vut")
+collect_type = 1
 
-[node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_g4xnc")
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("3_xkyer")
 
-[node name="CollisionShape" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_dwjxl")
+[node name="CollisionShape" parent="." index="1"]
+shape = SubResource("CircleShape2D_u3b8v")
+
+[connection signal="collect" from="." to="." method="_on_collect"]

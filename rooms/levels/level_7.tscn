@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d0l1lmio1gtoc" path="res://rooms/level.tscn" id="1_oyhe7"]
 [ext_resource type="Texture2D" uid="uid://oyw24r446gq6" path="res://color-palettes/silver.png" id="2_ej8of"]
-[ext_resource type="PackedScene" uid="uid://myhvdulnh4h1" path="res://scenes/dust/dust.tscn" id="3_l4ddk"]
+[ext_resource type="PackedScene" uid="uid://c8gj71c7mirac" path="res://scenes/dust/dust.tscn" id="3_l4ddk"]
 [ext_resource type="PackedScene" uid="uid://osoqlhrnqa8" path="res://scenes/pad/pad.tscn" id="4_nwdms"]
 [ext_resource type="PackedScene" uid="uid://bjm40f2b6c1mk" path="res://scenes/moving-spikeball/moving_spikeball.tscn" id="5_ym47u"]
 
@@ -43,7 +43,7 @@ position = Vector2(-96, 0)
 dust_type = 2
 
 [node name="Dust3" parent="Dusts" index="2" instance=ExtResource("3_l4ddk")]
-position = Vector2(88, 8)
+position = Vector2(96, 0)
 
 [node name="Pad2" parent="." index="7" instance=ExtResource("4_nwdms")]
 position = Vector2(-40, 87)

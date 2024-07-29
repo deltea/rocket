@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="LevelResource" load_steps=3 format=3 uid="uid://digiu5uradg8w"]
+[gd_resource type="Resource" script_class="LevelResource" load_steps=3 format=3 uid="uid://cdbl5ophba0c3"]
 
-[ext_resource type="PackedScene" uid="uid://bov6dmg7asnnj" path="res://rooms/levels/level_3.tscn" id="1_40pmx"]
+[ext_resource type="PackedScene" uid="uid://bjihlxjb01dsp" path="res://rooms/levels/level_3.tscn" id="1_40pmx"]
 [ext_resource type="Script" path="res://scripts/level_resource.gd" id="2_oytyt"]
 
 [resource]
 script = ExtResource("2_oytyt")
-level_name = "something"
+level_name = "level 3"
 scene = ExtResource("1_40pmx")
