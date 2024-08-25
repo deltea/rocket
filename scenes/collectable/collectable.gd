@@ -7,6 +7,7 @@ signal collect
 @export var hover_speed = 3.0
 @export var hover_magnitude = 2.0
 @export var turn_speed = 1.0
+@export var collected_turn_speed = 5.0
 @export var collect_type: COLLECT_TYPE = COLLECT_TYPE.DISAPPEAR
 
 @onready var sprite: Sprite2D = $Sprite
@@ -14,20 +15,18 @@ signal collect
 
 var collected = false
 var original_pos: Vector2
-var following = false
+var rotating = true
 
 func _ready() -> void:
 	original_pos = position
 
 func _process(delta: float) -> void:
-	rotate(delta * turn_speed)
+	if rotating:
+		rotate(delta * turn_speed)
 
-	if following:
-		var direction = RoomManager.current_room.player.position - position
-		if direction.length() > 1:
-			position = RoomManager.current_room.player.position - direction.normalized() * min(direction.length(), 20)
-	else:
-		position.y = original_pos.y + (sin(Clock.time * hover_speed) * hover_magnitude)
+	if collected: return
+
+	position.y = original_pos.y + sin(Clock.time * hover_speed) * hover_magnitude
 
 func set_collected(value: bool):
 	collected = value
@@ -40,7 +39,11 @@ func set_collected(value: bool):
 		COLLECT_TYPE.FOLLOW: follow(value)
 
 func follow(value: bool):
-	following = value
+	if value:
+		RoomManager.current_room.player.add_collectable(self)
+	else:
+		RoomManager.current_room.player.remove_collectable(self)
+		position = original_pos
 
 func disappear(value: bool):
 	var tweener = get_tree().create_tween().set_trans(Tween.TRANS_EXPO)
@@ -50,7 +53,6 @@ func disappear(value: bool):
 		tweener.tween_property(sprite, "scale", Vector2.ZERO, 0.4)
 	else:
 		tweener.tween_property(sprite, "scale", Vector2.ONE, 1.0)
-
 
 func _on_body_entered(body: Node2D):
 	if body is Player:

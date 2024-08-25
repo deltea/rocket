@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddanmgaltueiq"]
+[gd_scene load_steps=10 format=3 uid="uid://ddanmgaltueiq"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_8e7y8"]
 [ext_resource type="Texture2D" uid="uid://c7jdim0ct1cid" path="res://assets/gameplay/player.png" id="2_8ka1b"]
@@ -15,6 +15,9 @@ point_count = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xw08j"]
 size = Vector2(10, 2)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7kt16"]
+radius = 36.0139
 
 [node name="Player" type="RigidBody2D"]
 z_index = 1
@@ -56,7 +59,14 @@ position = Vector2(0, 9)
 [node name="CollisionShape" type="CollisionShape2D" parent="LandingArea"]
 shape = SubResource("RectangleShape2D_xw08j")
 
+[node name="DoorArea" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape" type="CollisionShape2D" parent="DoorArea"]
+shape = SubResource("CircleShape2D_7kt16")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="body_entered" from="LandingArea" to="." method="_on_landing_area_body_entered"]
 [connection signal="body_exited" from="LandingArea" to="." method="_on_landing_area_body_exited"]
+[connection signal="body_entered" from="DoorArea" to="." method="_on_door_area_body_entered"]

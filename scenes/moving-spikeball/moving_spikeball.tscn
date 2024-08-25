@@ -1,13 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjm40f2b6c1mk"]
+[gd_scene load_steps=4 format=3 uid="uid://bjm40f2b6c1mk"]
 
 [ext_resource type="Script" path="res://scenes/moving-spikeball/moving_spikeball.gd" id="1_s5npq"]
 [ext_resource type="PackedScene" uid="uid://dmidwgphesmiq" path="res://scenes/spikeball/spikeball.tscn" id="2_fpg7s"]
 [ext_resource type="PackedScene" uid="uid://dqm2jcab6otjm" path="res://scenes/dotted-line/dotted_line.tscn" id="3_pf0al"]
 
-[sub_resource type="Curve2D" id="Curve2D_mguwo"]
-
 [node name="MovingSpikeball" type="Path2D"]
-curve = SubResource("Curve2D_mguwo")
 script = ExtResource("1_s5npq")
 
 [node name="PathFollow" type="PathFollow2D" parent="."]

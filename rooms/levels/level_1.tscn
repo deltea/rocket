@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d0l1lmio1gtoc" path="res://rooms/level.tscn" id="1_1w6ee"]
 [ext_resource type="Texture2D" uid="uid://oyw24r446gq6" path="res://color-palettes/silver.png" id="2_wue1o"]
-[ext_resource type="PackedScene" uid="uid://myhvdulnh4h1" path="res://scenes/dust/dust.tscn" id="4_70q3x"]
+[ext_resource type="PackedScene" uid="uid://c8gj71c7mirac" path="res://scenes/dust/dust.tscn" id="4_70q3x"]
 
 [node name="Level1" instance=ExtResource("1_1w6ee")]
 palette = ExtResource("2_wue1o")
@@ -20,8 +20,8 @@ position = Vector2(0, -16)
 [node name="Pad" parent="." index="5"]
 position = Vector2(0, 39)
 
-[node name="Dust" parent="Dusts" index="0" instance=ExtResource("4_70q3x")]
+[node name="Dust" parent="Collectables/Dusts" index="0" instance=ExtResource("4_70q3x")]
 position = Vector2(56, 0)
 
-[node name="Dust2" parent="Dusts" index="1" instance=ExtResource("4_70q3x")]
+[node name="Dust2" parent="Collectables/Dusts" index="1" instance=ExtResource("4_70q3x")]
 position = Vector2(-56, 0)

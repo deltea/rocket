@@ -19,6 +19,8 @@ var rocket_texture: Texture2D
 var original_particle_pos: Vector2
 var original_landing_area_pos: Vector2
 var is_small = false
+var collectables: Array[Collectable] = []
+var collectables_angle = 0.0
 
 func _enter_tree() -> void:
 	RoomManager.current_room.player = self
@@ -47,6 +49,15 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("r"):
 		die()
 
+	collectables_angle += 2.0 * delta
+	var player_pos = RoomManager.current_room.player.position
+	var step = (PI*2) / len(collectables)
+	var radius = 20.0
+	for i in range(len(collectables)):
+		var collectable = collectables[i]
+		var target_pos = player_pos + Vector2.from_angle(collectables_angle + i * step) * radius
+		collectable.position = collectable.position.lerp(target_pos, 0.2)
+
 func go_into_portal(portal: Portal):
 	can_move = false
 	thrust_particles.emitting = false
@@ -70,10 +81,9 @@ func die():
 	RoomManager.current_room.call_deferred("add_child", rocket_pieces)
 
 	RoomManager.current_room.camera.shake(0.1, 2.0)
-	RoomManager.current_room.reset_dust()
+	RoomManager.current_room.reset_collectables()
 
 	spawn()
-
 
 func spawn():
 	gravity_scale = 1
@@ -113,6 +123,14 @@ func set_smallness(value: bool):
 	mass = 0.5 if value else 1.0
 	thrust_speed = 300.0 if value else 400.0
 
+func add_collectable(collectable: Collectable):
+	collectables.push_back(collectable)
+
+func remove_collectable(collectable: Collectable):
+	var index = collectables.find(collectable)
+	if index != -1:
+		collectables.remove_at(index)
+
 func _on_body_entered(body: Node):
 	if !can_move: return
 
@@ -126,3 +144,13 @@ func _on_landing_area_body_entered(body: Node2D):
 func _on_landing_area_body_exited(body: Node2D):
 	if body is Pad:
 		is_on_pad = false
+
+func _on_door_area_body_entered(body: Node2D):
+	if body is Door and len(collectables) > 0:
+		var collectable = collectables[0]
+		remove_collectable(collectable)
+		collectable.rotating = false
+		collectable.rotation = 0.0
+		var tween = get_tree().create_tween()
+		tween.tween_property(collectable, "position", body.position, 0.75).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+		tween.connect("finished", func(): collectable.visible = false)

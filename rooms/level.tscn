@@ -36,4 +36,8 @@ position = Vector2(0, -41)
 [node name="Pad" parent="." instance=ExtResource("7_8m54a")]
 position = Vector2(0, 31)
 
-[node name="Dusts" type="Node" parent="."]
+[node name="Collectables" type="Node" parent="."]
+
+[node name="Dusts" type="Node" parent="Collectables"]
+
+[node name="Keys" type="Node" parent="Collectables"]
