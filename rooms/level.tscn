@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0l1lmio1gtoc"]
+[gd_scene load_steps=10 format=3 uid="uid://d0l1lmio1gtoc"]
 
 [ext_resource type="Script" path="res://rooms/level.gd" id="1_0teix"]
 [ext_resource type="PackedScene" uid="uid://ddanmgaltueiq" path="res://scenes/player/player.tscn" id="2_lf1yj"]
@@ -7,6 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://osoqlhrnqa8" path="res://scenes/pad/pad.tscn" id="7_8m54a"]
 [ext_resource type="Texture2D" uid="uid://cdnunui18bx10" path="res://assets/generic/pixel.png" id="7_nc00j"]
 [ext_resource type="PackedScene" uid="uid://cf30e6g3uvil2" path="res://scenes/portal/portal.tscn" id="8_lfqqa"]
+
+[sub_resource type="Curve" id="Curve_qxmkc"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_kwpvj"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.132979, 1), 0.0, 0.0, 0, 0, Vector2(0.874113, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_0teix")
@@ -41,3 +49,23 @@ position = Vector2(0, 31)
 [node name="Dusts" type="Node" parent="Collectables"]
 
 [node name="Keys" type="Node" parent="Collectables"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = -1
+amount = 20
+lifetime = 6.0
+preprocess = 3.0
+lifetime_randomness = 0.2
+emission_shape = 3
+emission_rect_extents = Vector2(140, 100)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 5.0
+angle_min = -180.0
+angle_max = 180.0
+angle_curve = SubResource("Curve_qxmkc")
+scale_amount_min = 2.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_kwpvj")
+color = Color(0.333333, 0.333333, 0.333333, 1)
