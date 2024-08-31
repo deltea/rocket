@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AreaResource" load_steps=11 format=3 uid="uid://cf58neh2ibdf1"]
+[gd_resource type="Resource" script_class="AreaResource" load_steps=12 format=3 uid="uid://cf58neh2ibdf1"]
 
 [ext_resource type="Script" path="res://scripts/area_resource.gd" id="1_ajrcr"]
 [ext_resource type="Resource" uid="uid://xmkbagjk4psu" path="res://rooms/levels/level_1.tres" id="1_sdx2h"]
@@ -10,10 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://0ukpqw2h8gx3" path="res://assets/planets/rock.png" id="3_tictf"]
 [ext_resource type="Resource" uid="uid://w3davfvo74yj" path="res://rooms/levels/level_4.tres" id="4_j3cm1"]
 [ext_resource type="Resource" uid="uid://b0xgxgxokot71" path="res://rooms/levels/level_6.tres" id="5_026wr"]
+[ext_resource type="Resource" uid="uid://bl1kn3eopt4k" path="res://rooms/levels/level_8.tres" id="8_gdqrc"]
 
 [resource]
 script = ExtResource("1_ajrcr")
 palette = ExtResource("1_xi7jt")
 texture = ExtResource("3_tictf")
 area_name = "The Rock"
-levels = Array[Resource("res://scripts/level_resource.gd")]([ExtResource("1_sdx2h"), ExtResource("2_hax5p"), ExtResource("3_fpeea"), ExtResource("4_j3cm1"), ExtResource("3_e0b3g"), ExtResource("5_026wr"), ExtResource("1_y50tx")])
+levels = Array[Resource("res://scripts/level_resource.gd")]([ExtResource("1_sdx2h"), ExtResource("2_hax5p"), ExtResource("3_fpeea"), ExtResource("4_j3cm1"), ExtResource("3_e0b3g"), ExtResource("5_026wr"), ExtResource("1_y50tx"), ExtResource("8_gdqrc")])

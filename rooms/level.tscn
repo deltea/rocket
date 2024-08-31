@@ -44,13 +44,7 @@ position = Vector2(0, -41)
 [node name="Pad" parent="." instance=ExtResource("7_8m54a")]
 position = Vector2(0, 31)
 
-[node name="Collectables" type="Node" parent="."]
-
-[node name="Dusts" type="Node" parent="Collectables"]
-
-[node name="Keys" type="Node" parent="Collectables"]
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+[node name="Particles" type="CPUParticles2D" parent="."]
 z_index = -1
 amount = 20
 lifetime = 6.0
@@ -69,3 +63,9 @@ scale_amount_min = 2.0
 scale_amount_max = 3.0
 scale_amount_curve = SubResource("Curve_kwpvj")
 color = Color(0.333333, 0.333333, 0.333333, 1)
+
+[node name="Collectables" type="Node" parent="."]
+
+[node name="Dusts" type="Node" parent="Collectables"]
+
+[node name="Keys" type="Node" parent="Collectables"]

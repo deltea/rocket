@@ -86,8 +86,10 @@ func planet_selected(planet: PlanetSelect) -> void:
 		levels_grid.add_child(level_tile)
 
 	levels_grid.update_grid()
-	level_selector_target = levels_grid.get_child(0).position + levels_grid.position
-	level_label.text = "[center]%s[/center]" % levels_grid.get_child(0).level_resource.level_name.to_lower()
+
+	if levels_grid.get_child_count() > 0:
+		level_selector_target = levels_grid.get_child(0).position + levels_grid.position
+		level_label.text = "[center]%s[/center]" % levels_grid.get_child(0).level_resource.level_name.to_lower()
 
 func _on_back_button_click():
 	camera_target_pos = Vector2.ZERO

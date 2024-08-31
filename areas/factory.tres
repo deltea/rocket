@@ -1,6 +1,5 @@
-[gd_resource type="Resource" script_class="AreaResource" load_steps=6 format=3 uid="uid://ccxro2qat54mf"]
+[gd_resource type="Resource" script_class="AreaResource" load_steps=5 format=3 uid="uid://ccxro2qat54mf"]
 
-[ext_resource type="Resource" uid="uid://dx7hs4laed2uf" path="res://rooms/levels/level_7.tres" id="1_dywjh"]
 [ext_resource type="Texture2D" uid="uid://ce0bwwb828l6s" path="res://assets/planets/factory.png" id="1_qa72p"]
 [ext_resource type="Texture2D" uid="uid://b1md2qk2y5pga" path="res://color-palettes/electric.png" id="1_yf61h"]
 [ext_resource type="Script" path="res://scripts/area_resource.gd" id="2_0jqtn"]
@@ -11,4 +10,4 @@ script = ExtResource("2_0jqtn")
 palette = ExtResource("1_yf61h")
 texture = ExtResource("1_qa72p")
 area_name = "The Factory"
-levels = Array[Resource("res://scripts/level_resource.gd")]([ExtResource("1_dywjh"), ExtResource("2_gloww"), ExtResource("1_dywjh"), ExtResource("2_gloww"), ExtResource("1_dywjh"), ExtResource("2_gloww"), ExtResource("1_dywjh"), ExtResource("2_gloww")])
+levels = Array[Resource("res://scripts/level_resource.gd")]([ExtResource("2_gloww")])
