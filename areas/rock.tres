@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="AreaResource" load_steps=12 format=3 uid="uid://cf58neh2ibdf1"]
+[gd_resource type="Resource" script_class="AreaResource" load_steps=13 format=3 uid="uid://cf58neh2ibdf1"]
 
 [ext_resource type="Script" path="res://scripts/area_resource.gd" id="1_ajrcr"]
+[ext_resource type="Script" path="res://scripts/level_resource.gd" id="1_h30kf"]
 [ext_resource type="Resource" uid="uid://xmkbagjk4psu" path="res://rooms/levels/level_1.tres" id="1_sdx2h"]
-[ext_resource type="Texture2D" uid="uid://oyw24r446gq6" path="res://color-palettes/silver.png" id="1_xi7jt"]
 [ext_resource type="Resource" uid="uid://dx7hs4laed2uf" path="res://rooms/levels/level_7.tres" id="1_y50tx"]
 [ext_resource type="Resource" uid="uid://digiu5uradg8w" path="res://rooms/levels/level_2.tres" id="2_hax5p"]
 [ext_resource type="Resource" uid="uid://cdbl5ophba0c3" path="res://rooms/levels/level_5.tres" id="3_e0b3g"]
@@ -11,10 +11,11 @@
 [ext_resource type="Resource" uid="uid://w3davfvo74yj" path="res://rooms/levels/level_4.tres" id="4_j3cm1"]
 [ext_resource type="Resource" uid="uid://b0xgxgxokot71" path="res://rooms/levels/level_6.tres" id="5_026wr"]
 [ext_resource type="Resource" uid="uid://bl1kn3eopt4k" path="res://rooms/levels/level_8.tres" id="8_gdqrc"]
+[ext_resource type="Texture2D" uid="uid://csdm6hcxro8op" path="res://color-palettes/lmao.png" id="10_ysk8d"]
 
 [resource]
 script = ExtResource("1_ajrcr")
-palette = ExtResource("1_xi7jt")
+palette = ExtResource("10_ysk8d")
 texture = ExtResource("3_tictf")
 area_name = "The Rock"
-levels = Array[Resource("res://scripts/level_resource.gd")]([ExtResource("1_sdx2h"), ExtResource("2_hax5p"), ExtResource("3_fpeea"), ExtResource("4_j3cm1"), ExtResource("3_e0b3g"), ExtResource("5_026wr"), ExtResource("1_y50tx"), ExtResource("8_gdqrc")])
+levels = Array[ExtResource("1_h30kf")]([ExtResource("1_sdx2h"), ExtResource("2_hax5p"), ExtResource("3_fpeea"), ExtResource("4_j3cm1"), ExtResource("3_e0b3g"), ExtResource("5_026wr"), ExtResource("1_y50tx"), ExtResource("8_gdqrc")])

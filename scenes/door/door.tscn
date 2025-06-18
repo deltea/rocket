@@ -9,7 +9,13 @@ size = Vector2(8, 48)
 [node name="Door" type="StaticBody2D"]
 script = ExtResource("1_g1k8p")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="TopHalf" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
+rotation = 3.14159
+texture = ExtResource("2_v34j2")
+
+[node name="BottomHalf" type="Sprite2D" parent="."]
+position = Vector2(0, 12)
 texture = ExtResource("2_v34j2")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]

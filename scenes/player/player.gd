@@ -138,12 +138,10 @@ func _on_body_entered(body: Node):
 		die()
 
 func _on_landing_area_body_entered(body: Node2D):
-	if body is Pad:
-		is_on_pad = true
+	if body is Pad: is_on_pad = true
 
 func _on_landing_area_body_exited(body: Node2D):
-	if body is Pad:
-		is_on_pad = false
+	if body is Pad: is_on_pad = false
 
 func _on_door_area_body_entered(body: Node2D):
 	if body is Door and len(collectables) > 0:
@@ -153,4 +151,7 @@ func _on_door_area_body_entered(body: Node2D):
 		collectable.rotation = 0.0
 		var tween = get_tree().create_tween()
 		tween.tween_property(collectable, "position", body.position, 0.75).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
-		tween.connect("finished", func(): collectable.visible = false)
+		tween.connect("finished", func():
+			collectable.visible = false
+			(body as Door).set_doors(true)
+		)
