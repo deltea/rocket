@@ -18,7 +18,7 @@ var original_pos: Vector2
 var rotating = true
 
 func _ready() -> void:
-	original_pos = position
+	original_pos = positionz
 
 func _process(delta: float) -> void:
 	if rotating:

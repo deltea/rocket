@@ -11,11 +11,11 @@
 [ext_resource type="Resource" uid="uid://w3davfvo74yj" path="res://rooms/levels/level_4.tres" id="4_j3cm1"]
 [ext_resource type="Resource" uid="uid://b0xgxgxokot71" path="res://rooms/levels/level_6.tres" id="5_026wr"]
 [ext_resource type="Resource" uid="uid://bl1kn3eopt4k" path="res://rooms/levels/level_8.tres" id="8_gdqrc"]
-[ext_resource type="Texture2D" uid="uid://csdm6hcxro8op" path="res://color-palettes/lmao.png" id="10_ysk8d"]
+[ext_resource type="Texture2D" uid="uid://oyw24r446gq6" path="res://color-palettes/silver.png" id="10_5hh48"]
 
 [resource]
 script = ExtResource("1_ajrcr")
-palette = ExtResource("10_ysk8d")
+palette = ExtResource("10_5hh48")
 texture = ExtResource("3_tictf")
 area_name = "The Rock"
 levels = Array[ExtResource("1_h30kf")]([ExtResource("1_sdx2h"), ExtResource("2_hax5p"), ExtResource("3_fpeea"), ExtResource("4_j3cm1"), ExtResource("3_e0b3g"), ExtResource("5_026wr"), ExtResource("1_y50tx"), ExtResource("8_gdqrc")])

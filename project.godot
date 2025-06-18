@@ -32,6 +32,10 @@ window/size/window_height_override=960
 window/stretch/mode="viewport"
 window/default_gravity=200.0
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/wakatime/plugin.cfg")
+
 [input]
 
 left_mouse={
